@@ -23,12 +23,6 @@ Install dependencies for local development:
 pip install -r requirements.txt
 ```
 
-Install this SDK from the repository:
-
-```bash
-pip install git+ssh://git@github.com/ucloud/ustack-sdk-python.git
-```
-
 ## Quick Start
 
 ```python
