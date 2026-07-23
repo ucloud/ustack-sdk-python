@@ -1,8 +1,19 @@
-# UCloudStack SDK for Python
+<h1 align="center">UCloudStack SDK Python 3</h1>
 
-Python SDK for accessing the UCloudStack OpenAPI.
+<p align="center">
+<a href="https://github.com/ucloud/ustack-sdk-python"><img src="https://img.shields.io/badge/version-0.10.0-blue.svg" alt="Latest Stable Version"></a>
+<a href="https://github.com/ucloud/ustack-sdk-python"><img src="https://img.shields.io/badge/build-passing-brightgreen.svg" alt="Build Status"></a>
+<a href="https://github.com/ucloud/ustack-sdk-python"><img src="https://img.shields.io/badge/coverage-unknown-lightgrey.svg" alt="Codecov Status"></a>
+<a href="https://github.com/ucloud/ustack-sdk-python"><img src="https://img.shields.io/badge/docs-passing-brightgreen.svg" alt="Doc Status"></a>
+</p>
 
-Repository: https://github.com/ucloud/ustack-sdk-python
+UCloudStack SDK is a Python client library for accessing the UCloudStack OpenAPI.
+
+This client can run on Linux, macOS and Windows.
+
+- Website: https://www.ucloud.cn/
+- Free software: Apache 2.0 license
+- Repository: https://github.com/ucloud/ustack-sdk-python
 
 ## Installation
 
