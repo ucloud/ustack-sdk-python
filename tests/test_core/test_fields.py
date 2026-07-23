@@ -2,8 +2,8 @@ import logging
 
 import pytest
 
-from openapi.core import exc
-from openapi.core.typesystem import fields
+from ucloudstack.core import exc
+from ucloudstack.core.typesystem import fields
 
 logger = logging.getLogger(__name__)
 

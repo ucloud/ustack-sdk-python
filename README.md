@@ -25,8 +25,8 @@ pip install -r requirements.txt
 ## Quick Start
 
 ```python
-from ustack.client import Client
-from ustack.services.apis.describe_vm_instance_request import DescribeVMInstanceRequest
+from ucloudstack.client import Client
+from ucloudstack.services.apis.describe_vm_instance_request import DescribeVMInstanceRequest
 
 client = Client({
     "base_url": "http://<your-api-endpoint>/api",
@@ -34,9 +34,9 @@ client = Client({
     "private_key": "<your-private-key>",
 })
 
-openapi = client.openapi_client()
+api = client.ucloudstack_client()
 
 req = DescribeVMInstanceRequest(Region="<your-region>", Limit=10, Offset=0)
-resp = openapi.describe_vm_instance(req)
+resp = api.describe_vm_instance(req)
 print(resp.RetCode, resp.Infos)
 ```

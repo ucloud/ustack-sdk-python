@@ -1,7 +1,7 @@
 import json
 import typing
 
-from openapi.core.transport import Transport, Request, Response
+from ucloudstack.core.transport import Transport, Request, Response
 
 
 class MockedTransport(Transport):

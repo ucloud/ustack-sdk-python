@@ -1,1 +1,1 @@
-TEST_URL = "https://api.openapi.cn/"
+TEST_URL = "https://api.ucloudstack.com/"

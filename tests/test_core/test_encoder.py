@@ -1,6 +1,6 @@
 import pytest
 
-from openapi.core.typesystem import encoder
+from ucloudstack.core.typesystem import encoder
 
 
 @pytest.mark.parametrize(

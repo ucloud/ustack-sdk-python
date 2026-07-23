@@ -6,9 +6,9 @@ import logging
 import collections
 import requests_mock
 
-from openapi.client import Client
-from openapi.core import exc
-from openapi.core.transport import RequestsTransport, http
+from ucloudstack.client import Client
+from ucloudstack.core import exc
+from ucloudstack.core.transport import RequestsTransport, http
 
 from tests.utils import MockedTransport
 from tests.test_core import consts

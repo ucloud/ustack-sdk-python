@@ -31,13 +31,13 @@ PY3 = sys.version_info[0] == 3 and sys.version_info[1] >= 5
 
 if not PY3:
     raise NotImplementedError(
-        ("openapi-sdk-python3 should be used in 3.5 " "and above of python interpreter")
+        "ustack-sdk-python should be used in 3.5 " "and above of python interpreter"
     )
 
 
 def load_version():
     return importlib.import_module(
-        "openapi.version", os.path.join("openapi", "version.py")
+        "ucloudstack.version", os.path.join("ucloudstack", "version.py")
     ).version
 
 
@@ -70,7 +70,7 @@ dependencies_dev = list(set(dependencies_ci + ["black"]))
 
 def do_setup():
     setup(
-        name="openapi-sdk-python3",
+        name="ustack-sdk-python",
         description="UCloud Service Development Kit - Python",
         long_description=load_long_description(),
         long_description_content_type="text/markdown",
@@ -101,9 +101,9 @@ def do_setup():
             "Programming Language :: Python :: 3.7",
             "Topic :: Software Development",
         ],
-        author="openapi",
-        author_email="esl_ipdd@openapi.cn",
-        url="https://github.com/openapi/openapi-sdk-python3",
+        author="ucloud",
+        author_email="esl_ipdd@ucloud.cn",
+        url="https://github.com/ucloud/ustack-sdk-python",
         python_requires=">=3.5",
     )
 
