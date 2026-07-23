@@ -1,5 +1,5 @@
 import pytest
-from openapi.core import exc
+from ucloudstack.core import exc
 
 
 def test_ret_code_error():

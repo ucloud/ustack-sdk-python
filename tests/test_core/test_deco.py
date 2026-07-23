@@ -1,4 +1,4 @@
-from openapi.core.utils.deco import deprecated
+from ucloudstack.core.utils.deco import deprecated
 
 
 @deprecated(instead_of="bar")

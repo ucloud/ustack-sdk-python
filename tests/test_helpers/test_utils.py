@@ -1,4 +1,4 @@
-from openapi.helpers import utils
+from ucloudstack.helpers import utils
 
 
 def test_b64encode():

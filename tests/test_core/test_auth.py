@@ -1,4 +1,4 @@
-from openapi.core import auth
+from ucloudstack.core import auth
 
 
 def test_verify_ac():

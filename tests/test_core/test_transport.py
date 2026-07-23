@@ -6,8 +6,8 @@ import logging
 import requests_mock
 from collections import Counter
 
-from openapi.core import exc
-from openapi.core.transport import (
+from ucloudstack.core import exc
+from ucloudstack.core.transport import (
     RequestsTransport,
     Request,
     Response,

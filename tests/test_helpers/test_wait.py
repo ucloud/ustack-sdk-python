@@ -1,6 +1,6 @@
 import pytest
 
-from openapi.helpers import wait
+from ucloudstack.helpers import wait
 
 
 def test_wait():
