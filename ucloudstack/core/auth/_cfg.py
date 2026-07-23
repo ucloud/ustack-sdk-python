@@ -43,7 +43,7 @@ class Credential:
 
     the keys can be found on `APIKey documentation <https://console.ucloudstack.com/uapi/apikey>`__
 
-    it can calculate signature for OpenAPI:
+    it can calculate signature for UCloudStack:
 
     >>> cred = Credential('my_public_key', 'my_private_key')
     >>> cred.verify_ac({"foo": "bar"})

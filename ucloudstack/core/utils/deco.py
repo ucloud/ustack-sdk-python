@@ -1,7 +1,7 @@
 import functools
 import logging
 
-logger = logging.getLogger("openapi")
+logger = logging.getLogger("ucloudstack")
 
 
 def deprecated(instead_of="", message=""):

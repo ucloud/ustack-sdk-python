@@ -22,7 +22,7 @@ class ConfigSchema(schema.Schema):
 
 class Config:
     """
-    Config is the config of openapi sdk, use for setting up
+    Config is the config of ucloudstack sdk, use for setting up
 
     :type region: str
     :param region: Region is the region of backend service,

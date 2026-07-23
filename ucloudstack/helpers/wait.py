@@ -9,7 +9,7 @@ MAX_BACKOFF_INTERVAL = 10
 logger = logging.getLogger(__name__)
 
 
-class WaitTimeoutException(exc.OpenAPIException):
+class WaitTimeoutException(exc.UCloudStackException):
     pass
 
 

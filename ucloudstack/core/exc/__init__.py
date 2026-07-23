@@ -1,5 +1,5 @@
 from ucloudstack.core.exc._exc import (
-    OpenAPIException,
+    UCloudStackException,
     ValidationException,
     RetCodeException,
     RetryTimeoutException,

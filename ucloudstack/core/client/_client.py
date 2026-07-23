@@ -56,7 +56,7 @@ class Client:
                 return self._send(
                     action, d, max_retries=max_retries, timeout=timeout
                 )
-            except exc.OpenAPIException as e:
+            except exc.UCloudStackException as e:
                 if e.retryable and retries != max_retries:
                     logging.info(
                         "Retrying {action}: {args}".format(

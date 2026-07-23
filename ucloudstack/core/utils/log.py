@@ -1,6 +1,6 @@
 import logging
 
-DEFAULT_LOGGER_NAME = "openapi"
+DEFAULT_LOGGER_NAME = "ucloudstack"
 DEFAULT_FORMAT = "%(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s %(name)s)"
 DEFAULT_LEVEL = logging.INFO
 
