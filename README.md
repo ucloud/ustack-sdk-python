@@ -11,7 +11,7 @@ UCloudStack SDK is a Python client library for accessing the UCloudStack OpenAPI
 
 This client can run on Linux, macOS and Windows.
 
-- Website: https://www.ucloud.cn/
+- Website: https://www.ucloudstack.com
 - Free software: Apache 2.0 license
 - Repository: https://github.com/ucloud/ustack-sdk-python
 
