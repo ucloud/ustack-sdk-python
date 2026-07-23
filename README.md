@@ -1,22 +1,21 @@
-<h1 align="center">UCloudStack SDK Python 3</h1>
+# UCloudStack SDK for Python
 
-<p align="center">
-<a href="https://pypi.python.org/pypi/openapi-sdk-python3/"><img src="https://img.shields.io/pypi/v/openapi-sdk-python3.svg" alt="Latest Stable Version"></a>
-<a href="https://travis-ci.org/openapi/openapi-sdk-python3"><img src="https://travis-ci.org/openapi/openapi-sdk-python3.svg?branch=master" alt="Travis CI Status"></a>
-<a href="https://codecov.io/github/openapi/openapi-sdk-python3?branch=master"><img src="https://codecov.io/github/openapi/openapi-sdk-python3/coverage.svg?branch=master" alt="Codecov Status"></a>
-<a href="https://openapi.github.io/openapi-sdk-python3/"><img src="https://img.shields.io/badge/docs-passing-brightgreen.svg" alt="Doc Status"></a>
-</p>
+Python SDK for accessing the UCloudStack OpenAPI.
 
-UCloudStack SDK is a Python client library for accessing the UCloudStack API.
-
-- Website: https://www.openapi.cn/
-- Free software: Apache 2.0 license
-- [Documentation](https://docs.openapi.cn/opensdk-python/)
+Repository: https://github.com/ucloud/ustack-sdk-python
 
 ## Installation
 
+Install dependencies for local development:
+
 ```bash
 pip install -r requirements.txt
+```
+
+Install this SDK from the repository:
+
+```bash
+pip install git+ssh://git@github.com/ucloud/ustack-sdk-python.git
 ```
 
 ## Quick Start
@@ -37,3 +36,27 @@ req = DescribeVMInstanceRequest(Region="<your-region>", Limit=10, Offset=0)
 resp = openapi.describe_vm_instance(req)
 print(resp.RetCode, resp.Infos)
 ```
+
+## Package Names
+
+The distribution package name is `ustack-sdk-python`.
+
+This initial SDK snapshot still uses `openapi` as the Python import package:
+
+```python
+from openapi.client import Client
+```
+
+Future generated versions may switch the import package to `ustack` after the generator output is regenerated.
+
+## Development
+
+Run tests:
+
+```bash
+pytest
+```
+
+## License
+
+Apache License 2.0. See [LICENSE](./LICENSE).
