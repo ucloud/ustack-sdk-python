@@ -1471,7 +1471,7 @@ from ucloudstack.services.apis.withdraw_request import *
 from ucloudstack.services.apis.withdraw_response import *
 
 
-class UCloudStackClient(CoreClient):
+class OpenAPIClient(CoreClient):
     """OpenAPI SDK Client"""
 
     def __init__(self, config: dict, transport=None, middleware=None, logger=None):
