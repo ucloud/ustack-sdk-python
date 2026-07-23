@@ -1,28 +1,28 @@
-<h1 align="center">UCloudStack SDK Python 3</h1>
+# UCloudStack SDK Python
 
-<p align="center">
-<a href="https://github.com/ucloud/ustack-sdk-python"><img src="https://img.shields.io/badge/version-v2.13.x-blue.svg" alt="Latest Stable Version"></a>
-<a href="https://github.com/ucloud/ustack-sdk-python"><img src="https://img.shields.io/badge/build-passing-brightgreen.svg" alt="Build Status"></a>
-<a href="https://github.com/ucloud/ustack-sdk-python"><img src="https://img.shields.io/badge/coverage-unknown-lightgrey.svg" alt="Codecov Status"></a>
-<a href="https://github.com/ucloud/ustack-sdk-python"><img src="https://img.shields.io/badge/docs-passing-brightgreen.svg" alt="Doc Status"></a>
-</p>
+[![Python Version](https://img.shields.io/badge/Python-%3E%3D%203.5-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 
-UCloudStack SDK is a Python client library for accessing the UCloudStack API.
+UCloudStack SDK Python 是 UCloudStack API 的 Python 客户端库。
 
-This client can run on Linux, macOS and Windows.
+- 网站: https://www.ucloudstack.com
+- 许可证: Apache 2.0
 
-- Website: https://www.ucloudstack.com
-- Free software: Apache 2.0 license
+## 安装
 
-## Installation
+```bash
+pip install ustack-sdk-python
+```
 
-Install dependencies for local development:
+或从源码安装：
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Quick Start
+## 快速开始
+
+登陆控制台后获取公私钥，替换到代码中：
 
 ```python
 from ucloudstack.client import Client
@@ -40,3 +40,4 @@ req = DescribeVMInstanceRequest(Region="<your-region>", Limit=10, Offset=0)
 resp = api.describe_vm_instance(req)
 print(resp.RetCode, resp.Infos)
 ```
+
