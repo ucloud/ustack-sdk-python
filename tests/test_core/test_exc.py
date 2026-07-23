@@ -3,7 +3,7 @@ from ucloudstack.core import exc
 
 
 def test_ret_code_error():
-    assert not exc.OpenAPIException().retryable
+    assert not exc.UCloudStackException().retryable
 
     code_error = exc.RetCodeException("Foo", 1, "")
     assert str(code_error)

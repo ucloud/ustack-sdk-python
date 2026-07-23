@@ -3,7 +3,7 @@ import collections
 from ucloudstack.core.utils import compat
 
 
-class OpenAPIException(Exception):
+class UCloudStackException(Exception):
     @property
     def retryable(self):
         return False
@@ -12,7 +12,7 @@ class OpenAPIException(Exception):
 MAX_COMMON_RET_CODE = 2000
 
 
-class TransportException(OpenAPIException):
+class TransportException(UCloudStackException):
     pass
 
 
@@ -47,7 +47,7 @@ class InvalidResponseException(TransportException):
         )
 
 
-class RetCodeException(OpenAPIException):
+class RetCodeException(UCloudStackException):
     def __init__(
         self, action: str, code: int, message: str, request_uuid: str = None
     ):
@@ -73,11 +73,11 @@ class RetCodeException(OpenAPIException):
         }
 
 
-class RetryTimeoutException(OpenAPIException):
+class RetryTimeoutException(UCloudStackException):
     pass
 
 
-class ValidationException(OpenAPIException):
+class ValidationException(UCloudStackException):
     def __init__(self, e=None):
         if isinstance(e, compat.string_types):
             self.errors = [e]

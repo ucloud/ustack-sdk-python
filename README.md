@@ -26,18 +26,31 @@ pip install -r requirements.txt
 
 ```python
 from ucloudstack.client import Client
-from ucloudstack.services.apis.describe_vm_instance_request import DescribeVMInstanceRequest
+from ucloudstack.services.apis.create_vm_instance_request import CreateVMInstanceRequest
 
 client = Client({
-    "base_url": "http://<your-api-endpoint>/api",
-    "public_key": "<your-public-key>",
-    "private_key": "<your-private-key>",
+    "base_url": "http://my_api_endpoint/api",  # 替换成平台的API端点
+    # 替换成平台上获取的公/私钥
+    "public_key": "my_public_key",
+    "private_key": "my_private_key",
 })
 
 api = client.ucloudstack_client()
 
-req = DescribeVMInstanceRequest(Region="<your-region>", Limit=10, Offset=0)
-resp = api.describe_vm_instance(req)
-print(resp.RetCode, resp.Infos)
+req = CreateVMInstanceRequest(
+    Region="my_region",       # 替换成平台上的目标地域
+    Name="sdk-example-vm",
+    ImageID="image-xxx",      # 替换成平台上可用的镜像ID
+    Password="my_vm_password",
+    ChargeType="Dynamic",
+    CPU=1,
+    Memory=1024,
+)
+
+try:
+    resp = api.create_vm_instance(req)
+    print("resource id of the vm:", resp.VMID)
+except Exception as e:
+    print("error:", e)
 ```
 
