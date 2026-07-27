@@ -8,18 +8,6 @@ UCloudStack SDK Python 是 UCloudStack API 的 Python 客户端库。
 - 网站: https://www.ucloudstack.com
 - 许可证: Apache 2.0
 
-## 安装
-
-```bash
-pip install ustack-sdk-python
-```
-
-或从源码安装：
-
-```bash
-pip install -r requirements.txt
-```
-
 ## 快速开始
 
 登陆控制台后获取公私钥，替换到代码中：
