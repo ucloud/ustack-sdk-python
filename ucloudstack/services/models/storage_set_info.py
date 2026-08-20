@@ -22,6 +22,7 @@ class StorageSetInfo:
     SetAlias: Optional[str] = None  # 集群别名，存储集群的自定义名称
     SetArch: Optional[str] = None  # 集群架构，存储集群的硬件架构类型
     SetBlockBackupRole: Optional[str] = None  # 卷备份角色，当前存储集群在卷备份中的角色，值为master、slave或空字符串
+    SetCount: Optional[int] = None  # set数量，UDisk存储集群的set个数，用于前端计算分配率，仅UDisk类型返回
     SetID: Optional[str] = None  # 集群ID，存储集群的唯一标识，由底层Huanghe系统生成和管理
     SetProvider: Optional[str] = None  # 集群制备器，存储集群的底层存储提供商类型
     SetType: Optional[str] = None  # 集群类型，存储集群的类型标识

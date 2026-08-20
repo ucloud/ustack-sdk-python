@@ -16,7 +16,7 @@ class CreateContainerImageRepositoryRequest:
 
     Region: str  # 地域，镜像仓库所属地域
 
-    ProjectID: Optional[str] = None  # 项目组ID，资源所属项目组，未传时尝试分配默认项目
+    ProjectID: Optional[str] = None  # 项目组ID，资源所属项目组
 
     Public: Optional[bool] = None  # 是否为公有仓库，true 时系统会在资源上打上公有标记并在 Registry 中创建允许所有租户拉取的命名空间，false 时仅仓库所属租户可访问
 

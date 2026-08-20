@@ -14,11 +14,11 @@ class DescribeOrderRequest:
 
     EndTime: int  # 查询结束时间，订单创建时间的结束时间戳，单位为秒，必须大于起始时间
 
+    ProjectIDs: List[str]  # 项目组ID列表，保留字段，当前接口不会根据项目进行过滤
+
     Limit: Optional[int] = None  # 分页大小，指定每页返回的订单记录数量
 
     Offset: Optional[int] = None  # 分页偏移量，指定从第几条记录开始返回
-
-    ProjectIDs: Optional[List[str]] = None  # 项目组ID列表，保留字段，当前接口不会根据项目进行过滤；传空字符串时表示筛选未归属项目组数据
 
     Region: Optional[str] = None  # 地域ID，指定订单资源所属的物理区域，传入all或空值表示查询所有地域的订单
 

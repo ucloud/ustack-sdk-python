@@ -12,6 +12,6 @@ class VMNumaInfo:
 
     GPUInfos: Optional[List[NumaGPUInfo]] = None  # GPU列表，绑定到该NUMA节点的GPU设备
     HostNumaID: Optional[int] = None  # 物理NUMAID，宿主机的NUMA节点索引
-    Memory: Optional[int] = None  # 内存容量，分配给该NUMA节点的内存大小，单位：KiB
+    Memory: Optional[int] = None  # 内存容量，分配给该NUMA节点的内存大小，单位：MiB
     NumaID: Optional[int] = None  # 虚拟NUMAID，虚拟机内部的NUMA节点索引
     VCPUSet: Optional[str] = None  # vCPU集合，绑定到该NUMA节点的vCPU列表

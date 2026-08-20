@@ -24,5 +24,3 @@ class DescribeContainerImageRepositoryRequest:
 
     Public: Optional[bool] = None  # 是否只查询公有仓库，true 时忽略租户过滤并仅返回带有公有标记、所有租户都可拉取的仓库
 
-    Status: Optional[List[str]] = None  # 状态列表，按状态过滤镜像仓库
-

@@ -38,7 +38,7 @@ class CreateOSSRequest:
 
     EIPID: Optional[str] = None  # 弹性公网IP ID，用于绑定对象存储公网访问，传入时必须为未绑定状态
 
-    ProjectID: Optional[str] = None  # 项目组ID，资源所属项目组，未传时尝试分配默认项目
+    ProjectID: Optional[str] = None  # 项目组ID，资源所属项目组
 
     Remark: Optional[str] = None  # 备注，用于说明，长度0-100个中英文字符，禁止包含http://或https://等非法字符
 

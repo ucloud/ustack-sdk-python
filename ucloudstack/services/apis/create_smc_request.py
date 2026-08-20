@@ -43,7 +43,7 @@ class CreateSMCRequest:
 
     OS: Optional[str] = None  # 源端操作系统类型，表示源服务器的操作系统，如Linux或Windows
 
-    ProjectID: Optional[str] = None  # 项目ID，用于实现资源的逻辑分组管理，同一项目下的资源可统一计费和权限管理，未传时尝试分配默认项目
+    ProjectID: Optional[str] = None  # 项目ID，用于实现资源的逻辑分组管理，同一项目下的资源可统一计费和权限管理
 
     Remark: Optional[str] = None  # 备注说明，用于进行说明和注释，长度为0-100个英文或中文字符，不能包含http://或https://等非法字符
 

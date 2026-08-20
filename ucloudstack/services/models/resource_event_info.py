@@ -15,7 +15,6 @@ class ResourceEventInfo:
     Content: Optional[str] = None  # 事件内容，事件的详细描述信息
     Count: Optional[int] = None  # 次数，相同事件发生的累计次数
     Level: Optional[str] = None  # 事件等级，事件的严重程度
-    ProcessStatus: Optional[str] = None  # 人工处理状态，仅当Type=MonitorAlert时返回，取值：Open、Handled；未有状态记录时默认Open
     Region: Optional[str] = None  # 地域ID，标识该资源事件所属的地域
     ResourceEventID: Optional[str] = None  # 资源事件ID，事件的唯一标识，包含event前缀和14位随机字符
     ResourceID: Optional[str] = None  # 资源ID，发生事件的资源标识，包含资源类型前缀和14位随机字符

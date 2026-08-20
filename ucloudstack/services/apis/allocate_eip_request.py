@@ -28,7 +28,7 @@ class AllocateEIPRequest:
 
     IP: Optional[str] = None  # IP地址，指定要分配的IP地址，若不指定则系统自动分配可用IP
 
-    ProjectID: Optional[str] = None  # 项目ID，资源所属项目分组标识，未传时尝试分配默认项目
+    ProjectID: Optional[str] = None  # 项目ID，资源所属项目分组标识
 
     Remark: Optional[str] = None  # 备注，用于进行说明和注释，长度为0-100个英文或中文字符，不能使用http://或https://等非法字符，可为空
 

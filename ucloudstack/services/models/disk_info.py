@@ -17,7 +17,6 @@ class DiskInfo:
     AttachResourceType: Optional[str] = None  # 已挂载资源类型，挂载目标资源类型
     AttachShareBlockInfos: Optional[List[AttachShareBlock]] = None  # 共享盘挂载信息，当磁盘为共享盘且已挂载时返回挂载详情
     Bandwidth: Optional[int] = None  # 带宽，单位MB/s
-    CacheMode: Optional[str] = None  # 缓存类型，取值 directsync、none、writeback
     ChargeType: Optional[str] = None  # 计费类型，计费模式，取值范围：Dynamic（按小时计费）、Month（按月计费）、Year（按年计费）；兼容历史值：hour、month、year，别名映射：Dynamic→HOUR、Month→MONTH、Year→YEAR
     CompanyID: Optional[int] = None  # 租户ID，资源所属的租户标识
     CompanyName: Optional[str] = None  # 租户名称，资源所属租户名称

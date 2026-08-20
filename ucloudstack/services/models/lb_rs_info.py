@@ -12,6 +12,7 @@ class LbRSInfo:
 
     BindResourceID: Optional[str] = None  # 绑定资源ID，服务节点关联的资源ID（如VM的ID）
     BindResourceName: Optional[str] = None  # 绑定资源名称，用于展示服务节点关联资源名称（如VM名称）
+    BindResourceType: Optional[str] = None  # 绑定资源类型，取值范围：VM、OSS
     CreateTime: Optional[int] = None  # 创建时间，秒级Unix时间戳
     HealthCheckAddress: Optional[str] = None  # 健康检查地址，用于健康检查的IP和端口地址
     IP: Optional[str] = None  # 内网IP地址，服务节点的内网IP地址

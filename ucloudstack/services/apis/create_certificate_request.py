@@ -22,7 +22,7 @@ class CreateCertificateRequest:
 
     PrivateKey: Optional[str] = None  # 私钥内容，证书的私钥，证书类型为ServerCrt时必填，CA证书时无效，必须为有效的PEM格式私钥，且必须与证书配对
 
-    ProjectID: Optional[str] = None  # 项目ID，证书所属项目分组标识，未传时尝试分配默认项目
+    ProjectID: Optional[str] = None  # 项目ID，证书所属项目分组标识
 
     Remark: Optional[str] = None  # 备注，证书的描述信息，长度0-100字符，禁止http://或https://等非法字符
 

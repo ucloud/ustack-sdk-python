@@ -20,5 +20,3 @@ class BindSecurityGroupRequest:
 
     SGID: str  # 安全组ID，指定要绑定的安全组唯一标识符；安全组需处于Available状态
 
-    NICID: Optional[str] = None  # 网卡ID，绑定安全组时指定的网络接口唯一标识符，Flat时传入,其他场景传空字符串
-

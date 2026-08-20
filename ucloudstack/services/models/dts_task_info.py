@@ -12,7 +12,6 @@ class DTSTaskInfo:
 
     AllowStart: Optional[int] = None  # 是否允许启动，0表示不允许，1表示允许
     Arch: Optional[str] = None  # 架构，DTS实例架构
-    BatchSize: Optional[int] = None  # 单批写入大小，用于控制 sinker 每次批量写入的记录数；为0时使用系统默认值1000
     CPU: Optional[int] = None  # CPU核数，DTS实例CPU配置
     ChargeType: Optional[str] = None  # 计费类型，取值范围：Dynamic、Month、Year；兼容历史值：hour、month、year，别名映射：Dynamic->HOUR、Month->MONTH、Year->YEAR
     CompanyID: Optional[int] = None  # 租户ID，标识资源所属的租户组织，用于多租户资源隔离与权限控制
@@ -28,7 +27,6 @@ class DTSTaskInfo:
     EIPName: Optional[str] = None  # 弹性公网IP名称，绑定到DTS实例的EIP名称
     Email: Optional[str] = None  # 租户邮箱，资源所属租户的联系邮箱
     ExpireTime: Optional[int] = None  # 过期时间，秒级Unix时间戳
-    IncrementalRestart: Optional[DTSServiceRestartPolicy] = None  # 增量同步阶段的 DTS 自恢复策略；为空表示沿用 DTS 默认自恢复策略
     MaxRPS: Optional[int] = None  # 最大每秒同步记录数，用于限制同步速率，取值最小范围为100，最大范围根据DTS实例CPU核数确定，1核上限为20000，2核上限为40000
     Memory: Optional[int] = None  # 内存大小，单位GB，DTS实例内存配置
     Name: Optional[str] = None  # DTS任务名称，用于展示资源名称

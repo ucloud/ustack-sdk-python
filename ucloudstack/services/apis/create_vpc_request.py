@@ -18,7 +18,9 @@ class CreateVPCRequest:
 
     Region: str  # 地域ID，用于标识资源所属的地理区域
 
-    ProjectID: Optional[str] = None  # 项目ID，资源所属项目分组标识，未传时尝试分配默认项目
+    ExpandNetwork: Optional[str] = None  # VPC扩展网段，用于扩展VPC的IPv6地址空间，仅支持IPv6CIDR
+
+    ProjectID: Optional[str] = None  # 项目ID，资源所属项目分组标识
 
     Remark: Optional[str] = None  # 备注，用于进行说明和注释，长度为0-100个英文或中文字符，不能使用http://或https://等非法字符，可为空
 

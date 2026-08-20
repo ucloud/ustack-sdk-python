@@ -40,6 +40,5 @@ class SetInfo:
     SetID: Optional[str] = None  # 集群ID，计算集群的唯一标识，由底层Huanghe系统生成和管理
     SetType: Optional[str] = None  # 集群类型，计算集群的类型标识
     StorageClassList: Optional[List[StorageClassItem]] = None  # 物理绑定存储集群列表，当前计算集群可用的存储集群列表，物理绑定，硬限制，由底层物理网络拓扑决定
-    Suspend: Optional[bool] = None  # DRS是否暂停
     UpdateTime: Optional[int] = None  # 更新时间，Unix时间戳，单位为秒
     VGPUInfos: Optional[List[SetVGPUUsedInfo]] = None  # 虚拟GPU使用信息列表，包含各种vGPU型号的数量、使用量、可分配量等统计信息

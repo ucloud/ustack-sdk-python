@@ -16,3 +16,5 @@ class GetSubnetAvailableIPQuotaRequest:
 
     SubnetID: str  # 子网ID，用于查询可用IP数量的子网标识
 
+    IncludeExpand: Optional[bool] = None  # 是否返回扩展网段的相关数量，默认false仅返回主网段
+

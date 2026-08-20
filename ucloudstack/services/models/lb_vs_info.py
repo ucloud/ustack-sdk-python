@@ -15,8 +15,8 @@ class LbVSInfo:
     CreateTime: Optional[int] = None  # 创建时间，资源创建的时间戳（秒）
     Domain: Optional[str] = None  # HTTP健康检查域名，HTTP检查时校验的HOST字段域名
     HealthcheckType: Optional[str] = None  # 健康检查类型，健康检查的类型，取值范围：Port、Path
-    HttpClientMaxBodySizeMB: Optional[int] = None  # 请求体大小限制，单位MB，最大512；0表示不配置，继承负载均衡全局默认值
-    HttpClientMaxHeaderSizeKB: Optional[int] = None  # 请求头大小限制，单位KB，最大512；0表示不配置，继承负载均衡全局默认值
+    HttpClientMaxBodySizeMB: Optional[int] = None  # 请求体大小限制，单位MB，最大512；未配置时返回历史兼容默认展示值64
+    HttpClientMaxHeaderSizeKB: Optional[int] = None  # 请求头大小限制，单位KB，最大512；未配置时返回历史兼容默认展示值32
     KeepaliveTimeout: Optional[int] = None  # 连接空闲超时时间，负载均衡的连接空闲超时时间，单位为秒
     LBID: Optional[str] = None  # 负载均衡ID，用于标识所属负载均衡实例
     Origin: Optional[str] = None  # 虚拟服务器来源，标识监听器来源，取值范围：Default、Service、Ingress

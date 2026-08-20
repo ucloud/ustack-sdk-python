@@ -26,7 +26,7 @@ class CreateMulticastGroupRequest:
 
     VPCID: str  # VPC ID，虚拟私有网络的唯一标识符，组播组只能在该VPC内部消费；同一VPC当前最多拥有9个组播组，达到上限会返回StatusMulticastGroupLimit错误
 
-    ProjectID: Optional[str] = None  # 项目ID，用于实现资源的逻辑分组管理，未传时尝试分配默认项目
+    ProjectID: Optional[str] = None  # 项目ID，用于实现资源的逻辑分组管理
 
     Remark: Optional[str] = None  # 备注，用于进行说明和注释，长度为0-100个英文或中文字符，不能使用http://或https://等非法字符，可为空
 

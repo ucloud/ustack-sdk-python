@@ -12,7 +12,7 @@ class AbortMigratePaaSInstanceRequest:
 
     CompanyID: int  # 租户ID，保留字段
 
-    InstanceID: str  # 实例ID，只有迁移已报错( MigrationError=true )时才允许取消；其他状态会返回状态错误
+    InstanceID: str  # 实例ID，只有当迁移进度仍为0或迁移已报错( MigrationError=true )时才允许取消；其他状态会返回参数错误
 
     Region: str  # 地域ID，指定资源所属地域
 

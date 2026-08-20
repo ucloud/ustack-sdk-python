@@ -32,7 +32,3 @@ class GetNativeNodePriceRequest:
 
     DataDiskSpace: Optional[int] = None  # 数据盘大小
 
-    GPU: Optional[int] = None  # GPU数量
-
-    GPUMdevName: Optional[str] = None  # GPU型号
-

@@ -24,8 +24,6 @@ class NativeNodeInfo:
     EIP: Optional[str] = None  # 弹性IP
     EIPID: Optional[str] = None  # 
     EIPName: Optional[str] = None  # 弹性IP名称
-    GPU: Optional[int] = None  # GPU数量，挂载的物理GPU数量
-    GPUMdevName: Optional[str] = None  # GPU规格，挂载的物理GPU型号
     InstanceStatus: Optional[str] = None  # 
     InternalIP: Optional[str] = None  # 
     MaxPods: Optional[int] = None  # 节点最大pod数量

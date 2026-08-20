@@ -14,12 +14,10 @@ class FlatNetwork:
     CIDR: Optional[str] = None  # 网段CIDR，网络的IP地址范围
     CreateTime: Optional[int] = None  # 创建时间，秒级Unix时间戳
     DHCPServerIP: Optional[str] = None  # DHCP服务器IP地址，DHCP服务监听的IP
-    DNS: Optional[str] = None  # DNS配置，DNS服务器地址列表，多个地址用逗号分隔
     Description: Optional[str] = None  # 备注信息，网络的用途说明
     Device: Optional[str] = None  # 物理网卡设备名称，绑定的物理网络接口
     EnableDHCP: Optional[bool] = None  # 是否开启DHCP服务，启用后自动分配IP
     FlatNetworkID: Optional[str] = None  # 扁平网络ID，网络的唯一标识
-    GatewayIP: Optional[str] = None  # 网关IP地址，网络的默认网关IP
     IPRanges: Optional[str] = None  # 可用IP范围，可分配的IP地址段
     IPVersion: Optional[str] = None  # IP协议版本，IPv4或IPv6
     Name: Optional[str] = None  # 扁平网络名称，用于标识网络资源

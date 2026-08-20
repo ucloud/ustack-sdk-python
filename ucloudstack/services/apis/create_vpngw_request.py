@@ -32,7 +32,7 @@ class CreateVPNGWRequest:
 
     HighAvailability: Optional[str] = None  # 高可用模式，VPN网关的高可用配置方式，ActiveStandy为主备高可用模式（2个实例），Standalone为单机模式（1个实例），若不指定则默认为ActiveStandy
 
-    ProjectID: Optional[str] = None  # 项目ID，用于标识资源所属项目分组，未传时尝试分配默认项目
+    ProjectID: Optional[str] = None  # 项目ID，用于标识资源所属项目分组
 
     Remark: Optional[str] = None  # 备注，长度0-100字符，禁止http://或https://等非法字符
 

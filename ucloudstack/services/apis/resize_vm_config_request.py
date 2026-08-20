@@ -22,8 +22,6 @@ class ResizeVMConfigRequest:
 
     ApplicationReason: Optional[str] = None  # 审批理由，启用审批流程时的说明
 
-    CPUCoresPerSocket: Optional[int] = None  # CPU每个插槽内核数，可选字段，默认等于CPU
-
     CompanyID: Optional[int] = None  # 租户唯一标识ID，标识用户所属的租户组织，用于实现多租户环境下的资源隔离和权限控制，系统根据此ID确定用户的资源访问范围
 
     GPU: Optional[int] = None  # GPU数量，调整后的物理GPU数量，仅在GPUType为GPU时有效且必填

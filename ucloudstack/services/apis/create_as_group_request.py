@@ -38,7 +38,7 @@ class CreateASGroupRequest:
 
     Port: Optional[int] = None  # 监听端口，当AsType为VS时必填，用于指定伸缩成员加入负载均衡后端服务节点时使用的端口号
 
-    ProjectID: Optional[str] = None  # 项目ID，用于实现资源的逻辑分组管理，伸缩组将归属于指定项目，未传时尝试分配默认项目
+    ProjectID: Optional[str] = None  # 项目ID，用于实现资源的逻辑分组管理，伸缩组将归属于指定项目
 
     Remark: Optional[str] = None  # 备注，用于进行说明和注释，长度为0-100个英文或中文字符，不能使用http://或https://等非法字符
 

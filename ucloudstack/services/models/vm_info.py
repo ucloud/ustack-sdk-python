@@ -12,22 +12,16 @@ class VMInfo:
 
     AttachedUSBIDs: Optional[List[str]] = None  # USB列表，虚拟机挂载的USB设备ID
     BasicImageName: Optional[str] = None  # 基础镜像名称，用于创建虚拟机的源镜像名称
-    BootDevices: Optional[List[str]] = None  # 引导顺序，可选字段，支持：hd（硬盘），cdrom（光驱），network（网络）
     BootloaderType: Optional[str] = None  # 引导方式，虚拟机的系统引导协议
-    CDROMInfos: Optional[List[VmCDROMInfo]] = None  # 光驱列表，挂载到虚拟机的光驱详细信息
     CPU: Optional[int] = None  # 核心数，虚拟机的vCPU核心数量
-    CPUCoresPerSocket: Optional[int] = None  # CPU每个插槽内核数，可选字段，默认等于CPU
-    CPUHypervisorDisable: Optional[bool] = None  # 是否隐藏虚拟化标记
-    CPULimitPercent: Optional[int] = None  # CPU频率限制百分比，可选字段，默认100%
     CPUMode: Optional[str] = None  # CPU模式，虚拟机的CPU模拟方式
     CPUModel: Optional[str] = None  # CPU型号，虚拟机的CPU处理器型号
     CPUModelInSetIntersection: Optional[bool] = None  # 集群通用CPU，标识CPU型号是否为集群兼容模式
     CPUModelInSetIntersectionSpec: Optional[bool] = None  # 期望集群通用CPU，用户指定是否使用集群兼容模式
     CPUModelSpec: Optional[str] = None  # 期望CPU型号，用户指定的预期CPU型号
-    CPUPriority: Optional[str] = None  # CPU优先级，取值：Normal，High （高），可选字段，默认Normal
     CPUUtilization: Optional[float] = None  # CPU利用率，10分钟平均CPU使用百分比
     CanLogin: Optional[bool] = None  # 是否可登录，标识虚拟机操作系统是否已就绪可供登录
-    CanMigrateAbort: Optional[bool] = None  # 迁移/快照可取消，标识当前是否处于可取消的迁移状态
+    CanMigrateAbort: Optional[bool] = None  # 迁移可取消，标识当前是否处于可取消的迁移状态
     ChargeType: Optional[str] = None  # 计费类型，资源的计费模式状态
     CloudInitEnabled: Optional[bool] = None  # Cloud-Init启用，标识是否已启用Cloud-Init
     CloudInitRunning: Optional[bool] = None  # Cloud-Init运行中，标识Cloud-Init是否正在执行
@@ -35,7 +29,6 @@ class VMInfo:
     CompanyName: Optional[str] = None  # 租户名称，资源归属租户的可读名称
     CreateTime: Optional[int] = None  # 创建时间，资源首次创建的秒级Unix时间戳
     DNS: Optional[str] = None  # DNS配置，虚拟机使用的DNS服务器列表
-    DNSMode: Optional[str] = None  # DNS模式，DNS配置的分配方式，Auto-自动分配，Manual-手动指定
     DiskCacheMode: Optional[str] = None  # 磁盘缓存模式，当前生效的磁盘I/O缓存策略
     DiskInfos: Optional[List[VmDiskInfo]] = None  # 磁盘列表，挂载到虚拟机的磁盘详细信息
     Email: Optional[str] = None  # 租户邮箱，归属租户的联系电子邮箱
@@ -63,7 +56,6 @@ class VMInfo:
     MdevName: Optional[str] = None  # vGPU规格，挂载的虚拟GPU配置规格
     MemUsage: Optional[float] = None  # 内存利用率，10分钟平均内存使用百分比
     Memory: Optional[int] = None  # 内存容量，虚拟机的内存大小，单位：MiB
-    NICInfos: Optional[List[VmNICInfo]] = None  # 网卡列表，挂载到虚拟机的网卡详细信息
     Name: Optional[str] = None  # 虚拟机名称，自定义的云主机实例标识
     NetworkType: Optional[str] = None  # 网络类型，虚拟机网络接入类型
     OSName: Optional[str] = None  # 系统名称，操作系统的完整显示名称

@@ -20,15 +20,3 @@ class UpdateDiskQoSRequest:
 
     DiskIOPS: Optional[int] = None  # 硬盘IOPS限制，取值范围0-50000，0表示不限制
 
-    DiskReadBandwidth: Optional[int] = None  # 硬盘QoS限速读带宽，单位MB/s，0表示不限制
-
-    DiskReadIOPS: Optional[int] = None  # 硬盘QoS限速读IOPS，0表示不限制
-
-    DiskTotalBandwidth: Optional[int] = None  # 硬盘QoS限速总带宽，单位MB/s，0表示不限制
-
-    DiskTotalIOPS: Optional[int] = None  # 硬盘QoS限速总IOPS，0表示不限制
-
-    DiskWriteBandwidth: Optional[int] = None  # 硬盘QoS限速写带宽，单位MB/s，0表示不限制
-
-    DiskWriteIOPS: Optional[int] = None  # 硬盘QoS限速写IOPS，0表示不限制
-

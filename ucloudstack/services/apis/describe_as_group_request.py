@@ -26,5 +26,3 @@ class DescribeASGroupRequest:
 
     ProjectIDs: Optional[List[str]] = None  # 项目ID列表，用于筛选指定项目下的伸缩组，若不指定则查询所有项目
 
-    Status: Optional[List[str]] = None  # 状态列表，按状态过滤伸缩组
-

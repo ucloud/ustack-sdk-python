@@ -24,5 +24,3 @@ class DescribeClusterRequest:
 
     ProjectIDs: Optional[List[str]] = None  # 项目组ID
 
-    Status: Optional[List[str]] = None  # 状态列表，按状态过滤容器集群
-

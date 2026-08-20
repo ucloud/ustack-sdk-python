@@ -19,17 +19,13 @@ class NodeInfo:
     Network: Optional[Network] = None  # 主机网络详情，节点网络信息
     NodeID: Optional[str] = None  # 节点ID，节点唯一标识
     NodeIP: Optional[str] = None  # 节点IP地址，节点管理IP地址
-    NodeIPMIIP: Optional[str] = None  # 节点IPMI管理地址
     NodeIPv6: Optional[str] = None  # 节点IPv6地址，节点管理IPv6地址
     NodeStatus: Optional[str] = None  # 节点状态，当前运行状态
     NumaNodes: Optional[int] = None  # NUMA节点数，节点NUMA拓扑数量
-    OS: Optional[str] = None  # 操作系统
     OSDInfos: Optional[List[OSDStat]] = None  # 存储节点OSD详情，存储服务状态信息
     PhysicalDisks: Optional[List[PhysicalDisk]] = None  # 物理磁盘详情，节点磁盘列表信息
     Region: Optional[str] = None  # 地域ID，节点所属地域
-    RegionAlias: Optional[str] = None  # 地域别名，地域的人性化显示名称
     SerialNumber: Optional[str] = None  # 序列号，硬件设备序列号
-    SetAlias: Optional[str] = None  # 集群别名，节点所属计算集群的自定义名称
     Types: Optional[List[str]] = None  # 节点类型，节点角色列表
     UUID: Optional[str] = None  # UUID，节点硬件唯一标识
     VCPUBindingEnabled: Optional[bool] = None  # 是否支持vCPU绑定，节点是否支持绑定能力

@@ -41,7 +41,11 @@ class CloneVMInstanceRequest:
 
     IPVersion: Optional[str] = None  # IP版本，新虚拟机使用的IP协议版本，取值：IPv4、IPv6
 
+    InternalExpandIP: Optional[str] = None  # 扩展IP，指定内网扩展IP地址
+
     InternalIP: Optional[str] = None  # 内网IP，指定新虚拟机的内网IP地址，留空则自动分配
+
+    InternalIPVersion: Optional[str] = None  # 内网协议，指定内网IP协议版本，取值：IPv4、IPv6、ALL、空值
 
     InternetIP: Optional[str] = None  # 外网IP，指定新虚拟机的外网IP地址，留空则自动分配
 
@@ -55,7 +59,7 @@ class CloneVMInstanceRequest:
 
     OperatorName: Optional[str] = None  # 外网线路ID，指定外网宽带运营商线路
 
-    ProjectID: Optional[str] = None  # 项目ID，资源所属的项目分组标识，未传时尝试分配默认项目
+    ProjectID: Optional[str] = None  # 项目ID，资源所属的项目分组标识
 
     Remark: Optional[str] = None  # 备注信息，对新虚拟机的补充说明，长度0-100个字符，禁止包含<script>标签或javascript链接
 

@@ -34,7 +34,7 @@ class AllocateVIPRequest:
 
     IPVersion: Optional[str] = None  # IP协议版本，支持IPv4/IPv6/ALL或空值；为空时使用所选子网或外网网段的默认协议；LAN类型VIP会据此匹配对应协议版本子网
 
-    ProjectID: Optional[str] = None  # 项目ID，资源所属项目分组标识，未传时尝试分配默认项目
+    ProjectID: Optional[str] = None  # 项目ID，资源所属项目分组标识
 
     Remark: Optional[str] = None  # 备注，用于说明和注释，长度0-100个字符，禁止包含<script>标签或javascript链接
 

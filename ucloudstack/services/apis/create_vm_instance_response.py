@@ -11,8 +11,8 @@ class CreateVMInstanceResponse:
     Message: str = ""
     Action: str = ""
 
-    DiskID: Optional[str] = None  # 数据盘ID，盘的唯一标识
-    DiskIDs: Optional[List[str]] = None  # 数据盘ID列表，挂载的数据盘唯一标识列表
+    DiskID: Optional[str] = None  # 磁盘ID，系统盘的唯一标识
     EIPID: Optional[str] = None  # 外网资源ID，绑定的弹性IP标识
     EIPIDs: Optional[List[str]] = None  # 外网资源ID列表，创建阶段生成的WAN IP标识列表；首个元素与EIPID一致，后续元素为附加WAN IP的标识
+    FlatIPID: Optional[str] = None  # 扁平网络ID，绑定的扁平网络IP标识
     VMID: Optional[str] = None  # 虚拟机ID，创建成功的云主机实例标识

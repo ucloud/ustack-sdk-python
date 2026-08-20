@@ -2,7 +2,6 @@
 
 from dataclasses import dataclass
 from typing import Optional, List, Any, Dict
-from ucloudstack.services.models import *
 
 
 @dataclass
@@ -12,7 +11,6 @@ class GetDTSTaskConfigureResponse:
     Message: str = ""
     Action: str = ""
 
-    BatchSize: Optional[int] = None  # 单批写入大小，用于控制 sinker 每次批量写入的记录数；为0时使用系统默认值1000
     DTSID: Optional[str] = None  # DTS任务ID，数据传输任务唯一标识
     DataMarkTable: Optional[str] = None  # 数据标记表，用于双向同步场景记录已同步数据，格式为database.table_name，未指定则自动创建
     Databases: Optional[str] = None  # 同步数据库列表，未指定则同步所有数据库
@@ -29,7 +27,6 @@ class GetDTSTaskConfigureResponse:
     HeartbeatTable: Optional[str] = None  # 心跳表名称，用于增量或双向同步场景定时推进binlog位点，格式为database.table_name，未指定则自动创建
     IgnoreDatabases: Optional[str] = None  # 忽略数据库列表，用于排除不需要同步的数据库
     IgnoreTables: Optional[str] = None  # 忽略数据表列表，用于排除不需要同步的数据表
-    IncrementalRestart: Optional[DTSServiceRestartPolicy] = None  # 增量同步阶段的 DTS 自恢复策略；为空表示沿用 DTS 默认自恢复策略
     SourceEndpointBinlogGTID: Optional[str] = None  # binlog GTID集合，用于增量或全量加增量同步
     SourceEndpointBinlogName: Optional[str] = None  # binlog文件名，用于增量或全量加增量同步
     SourceEndpointBinlogPos: Optional[int] = None  # binlog位点，用于增量或全量加增量同步

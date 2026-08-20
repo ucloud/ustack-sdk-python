@@ -10,9 +10,6 @@ from typing import Optional, List, Any, Dict
 class SGResourceInfo:
     """"""
 
-    IP: Optional[str] = None  # IP地址，按网卡粒度查询时返回网卡主IP；未获取到时为空
-    MAC: Optional[str] = None  # MAC地址，按网卡粒度查询时返回网卡MAC；未获取到时为空
-    NICID: Optional[str] = None  # 网卡ID，按网卡粒度查询时返回绑定安全组的网卡唯一标识符；非网卡资源为空
     NICType: Optional[str] = None  # 网卡类型，资源绑定安全组时的网络接口类型；取值LAN/WAN
     Name: Optional[str] = None  # 资源名称
     Region: Optional[str] = None  # 地域ID，用于标识资源所属的地理区域

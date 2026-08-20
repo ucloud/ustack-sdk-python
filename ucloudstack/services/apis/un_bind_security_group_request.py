@@ -18,5 +18,3 @@ class UnBindSecurityGroupRequest:
 
     ResourceID: str  # 资源ID，指定要解绑安全组的资源唯一标识符，支持VM、ELASTIC_NIC、OSS、FS、MySQL、Redis等资源类型
 
-    NICID: Optional[str] = None  # 网卡ID，绑定安全组时指定的网络接口唯一标识符，Flat时传入,其他场景传空字符串
-

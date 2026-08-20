@@ -32,5 +32,3 @@ class DescribeEIPRequest:
 
     ProjectIDs: Optional[List[str]] = None  # 项目ID列表，用于过滤指定项目下的EIP资源
 
-    Status: Optional[List[str]] = None  # EIP状态列表，用于按多个状态过滤EIP，支持前端按Status.0、Status.1等形式传参
-

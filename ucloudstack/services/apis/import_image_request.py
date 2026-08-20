@@ -12,7 +12,7 @@ class ImportImageRequest:
 
     CompanyID: int  # 租户唯一标识ID，标识用户所属的租户组织，用于实现多租户环境下的资源隔离和权限控制，系统根据此ID确定用户的资源访问范围
 
-    ImageFormat: str  # 镜像格式，指定导入的虚拟化文件格式，取值qcow2、iso、vmdk、raw
+    ImageFormat: str  # 镜像格式，指定导入的虚拟化文件格式，取值qcow2、iso
 
     ImageName: str  # 镜像名称，用于标识导入的镜像资源
 
@@ -22,7 +22,11 @@ class ImportImageRequest:
 
     OSType: str  # 操作系统类型，如Linux、Windows
 
+    OSVersion: str  # 操作系统版本，指定镜像内部安装的具体发行版本号
+
     Region: str  # 地域ID，用于标识资源所属的地理区域
+
+    SetArch: str  # 架构类型，基于计算集群支持的指令集，如x86_64、aarch64
 
     BootloaderType: Optional[str] = None  # 引导类型，取值bios、uefi，未指定时默认bios
 
@@ -32,13 +36,9 @@ class ImportImageRequest:
 
     LoadURL: Optional[str] = None  # 来源URL，仅在远程模式下有效，当ImportType为Remote时必填，用于拉取镜像文件
 
-    OSVersion: Optional[str] = None  # 操作系统版本，指定镜像内部安装的具体发行版本号
-
     ProjectID: Optional[str] = None  # 项目ID，资源所属的项目分组标识
 
     Secret: Optional[str] = None  # 镜像密钥，用于镜像在存储层的解密与使用
-
-    SetArch: Optional[str] = None  # 架构类型，基于计算集群支持的指令集，如x86_64、aarch64
 
     SupportCloudInit: Optional[bool] = None  # Cloud-Init支持，标识镜像是否支持自动化初始化配置
 

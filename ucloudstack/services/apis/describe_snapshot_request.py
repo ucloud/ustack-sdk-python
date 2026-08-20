@@ -26,5 +26,3 @@ class DescribeSnapshotRequest:
 
     SnapshotIDs: Optional[List[str]] = None  # 快照ID列表，用于查询指定快照信息
 
-    Status: Optional[List[str]] = None  # 状态列表，用于筛选指定状态的快照资源
-

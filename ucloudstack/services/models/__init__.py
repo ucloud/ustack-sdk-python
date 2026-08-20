@@ -60,9 +60,6 @@ from .container_info import ContainerInfo
 from .container_log_info import ContainerLogInfo
 from .container_status import ContainerStatus
 from .controller_plane_status import ControllerPlaneStatus
-from .create_vm_instance_request_cdrom import CreateVMInstanceRequestCDROM
-from .create_vm_instance_request_data_disk import CreateVMInstanceRequestDataDisk
-from .create_vm_instance_request_nic import CreateVMInstanceRequestNIC
 from .dbs_backup_info import DBSBackupInfo
 from .dbs_gateway import DBSGateway
 from .dbs_plan_info import DBSPlanInfo
@@ -78,7 +75,6 @@ from .drs import DRS
 from .drs_rule_vm_info import DRSRuleVMInfo
 from .dts_precheck_item import DTSPrecheckItem
 from .dts_price_info import DTSPriceInfo
-from .dts_service_restart_policy import DTSServiceRestartPolicy
 from .dts_task_info import DTSTaskInfo
 from .data_check_task_overview import DataCheckTaskOverview
 from .dimension import Dimension
@@ -247,7 +243,6 @@ from .redis_slowlog import RedisSlowlog
 from .region_config_base_info import RegionConfigBaseInfo
 from .region_config_category_info import RegionConfigCategoryInfo
 from .region_config_info import RegionConfigInfo
-from .region_config_sync_status_info import RegionConfigSyncStatusInfo
 from .region_info import RegionInfo
 from .region_network_latency import RegionNetworkLatency
 from .remote_vpngw_info import RemoteVPNGWInfo
@@ -292,6 +287,8 @@ from .storage_set_type_info import StorageSetTypeInfo
 from .storage_usage_info import StorageUsageInfo
 from .subnet_info import SubnetInfo
 from .subnet_route_info import SubnetRouteInfo
+from .super_node_gpu_info import SuperNodeGPUInfo
+from .super_node_info import SuperNodeInfo
 from .tag import Tag
 from .tag_info import TagInfo
 from .tag_resource_info import TagResourceInfo
@@ -339,9 +336,7 @@ from .vpn_tunnel_info import VPNTunnelInfo
 from .validate_kickstart_template_result import ValidateKickstartTemplateResult
 from .validate_partition_config_result import ValidatePartitionConfigResult
 from .vip_price_info import VipPriceInfo
-from .vm_cdrom_info import VmCDROMInfo
 from .vm_disk_info import VmDiskInfo
-from .vm_nic_info import VmNICInfo
 from .vm_price_info import VmPriceInfo
 from .vm_set_item import VmSetItem
 from .vpn_price_info import VpnPriceInfo
@@ -415,9 +410,6 @@ __all__ = [
     'ContainerLogInfo',
     'ContainerStatus',
     'ControllerPlaneStatus',
-    'CreateVMInstanceRequestCDROM',
-    'CreateVMInstanceRequestDataDisk',
-    'CreateVMInstanceRequestNIC',
     'DBSBackupInfo',
     'DBSGateway',
     'DBSPlanInfo',
@@ -433,7 +425,6 @@ __all__ = [
     'DRSRuleVMInfo',
     'DTSPrecheckItem',
     'DTSPriceInfo',
-    'DTSServiceRestartPolicy',
     'DTSTaskInfo',
     'DataCheckTaskOverview',
     'Dimension',
@@ -602,7 +593,6 @@ __all__ = [
     'RegionConfigBaseInfo',
     'RegionConfigCategoryInfo',
     'RegionConfigInfo',
-    'RegionConfigSyncStatusInfo',
     'RegionInfo',
     'RegionNetworkLatency',
     'RemoteVPNGWInfo',
@@ -647,6 +637,8 @@ __all__ = [
     'StorageUsageInfo',
     'SubnetInfo',
     'SubnetRouteInfo',
+    'SuperNodeGPUInfo',
+    'SuperNodeInfo',
     'Tag',
     'TagInfo',
     'TagResourceInfo',
@@ -694,9 +686,7 @@ __all__ = [
     'ValidateKickstartTemplateResult',
     'ValidatePartitionConfigResult',
     'VipPriceInfo',
-    'VmCDROMInfo',
     'VmDiskInfo',
-    'VmNICInfo',
     'VmPriceInfo',
     'VmSetItem',
     'VpnPriceInfo',

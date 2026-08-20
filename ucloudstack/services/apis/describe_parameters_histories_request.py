@@ -12,7 +12,7 @@ class DescribeParametersHistoriesRequest:
 
     BeginTime: int  # 开始时间，Unix秒时间戳，配合结束时间筛选操作日志，必须早于EndTime
 
-    CompanyID: int  # 租户唯一标识ID，用于校验目标实例租户归属；不会作为审计日志查询条件
+    CompanyID: int  # 租户唯一标识ID，作为审计日志查询条件之一
 
     DatabaseID: str  # 数据库实例ID，仅支持MySQL/Redis实例，后台会以该ID作为资源ID去审计日志服务中查询
 
@@ -20,7 +20,7 @@ class DescribeParametersHistoriesRequest:
 
     ProductType: str  # 产品类型，当前仅支持MySQL或Redis，系统会根据取值限定操作类型（MySQL对应UpdateMySQLConfigParam，Redis对应UpdateRedisConfigParams）
 
-    Region: str  # 地域ID，用于校验目标实例所属地域；审计日志查询范围由DatabaseID、ProductType和对应操作类型收敛
+    Region: str  # 地域ID，指定实例所在地域，后台会据此到对应审计日志库查询操作记录
 
     Keyword: Optional[str] = None  # 关键词，仅对参数名称执行不区分大小写的包含匹配，用于在解析出来的参数变更列表中二次过滤
 

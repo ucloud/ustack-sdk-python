@@ -14,21 +14,21 @@ class UpdateVMAdvancedOptionsRequest:
 
     VMID: str  # 虚拟机ID，待修改配置的虚拟机标识
 
-    BootloaderType: Optional[str] = None  # 已废弃，不生效
+    BootloaderType: Optional[str] = None  # 引导方式，虚拟机的系统引导协议，取值：bios、uefi
 
-    CPUMode: Optional[str] = None  # 已废弃，不生效
+    CPUMode: Optional[str] = None  # CPU模式，虚拟机的CPU模拟方式，取值：host-passthrough（直通）、custom（自定义）
 
-    CPUModel: Optional[str] = None  # 已废弃，不生效
+    CPUModel: Optional[str] = None  # CPU型号，仅在CPUMode为custom时生效，取值：default、general、other
 
     DNS: Optional[str] = None  # DNS配置，虚拟机使用的DNS服务器列表
 
-    DiskCacheMode: Optional[str] = None  # 已废弃，不生效
+    DiskCacheMode: Optional[str] = None  # 磁盘缓存模式，磁盘I/O缓存策略，取值：writeback、none、directsync
 
-    HighAvailability: Optional[str] = None  # 已废弃，不生效
+    HighAvailability: Optional[str] = None  # 高可用模式，虚拟机的HA策略，取值：NeverStop（默认）、None
 
-    ISOTotal: Optional[int] = None  # 已废弃，不生效
+    ISOTotal: Optional[int] = None  # ISO插槽配额，配置的ISO挂载插槽数量，需重启生效
 
-    UninstallISO: Optional[bool] = None  # 已废弃，不生效
+    UninstallISO: Optional[bool] = None  # 卸载ISO，标识是否卸载挂载的ISO镜像
 
-    UserData: Optional[str] = None  # 自定义数据，需 base64 编码后传入
+    UserData: Optional[str] = None  # Cloud-Init脚本，用于自定义系统初始化配置
 

@@ -16,8 +16,6 @@ class AttachExternalDiskRequest:
 
     ResourceID: str  # 资源ID，绑定目标资源的ID
 
-    CacheMode: Optional[str] = None  # 缓存类型，取值 directsync、none、writeback
-
     CompanyID: Optional[int] = None  # 租户ID，资源所属租户的权限上下文
 
     ResourceType: Optional[str] = None  # 资源类型，绑定目标资源的类型标识
