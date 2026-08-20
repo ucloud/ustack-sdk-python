@@ -20,5 +20,5 @@ class ReinstallVMInstanceRequest:
 
     Password: Optional[str] = None  # 管理员密码，重装后的系统管理员密码，密码强度规则由RegionConfigKeyVMPasswordLength与RegionConfigKeyVMPasswordComplexity配置决定
 
-    UserData: Optional[str] = None  # Cloud-Init脚本，用于自定义系统初始化配置，需 base64 编码后传入
+    UserData: Optional[str] = None  # Cloud-Init脚本，用于自定义系统初始化配置
 

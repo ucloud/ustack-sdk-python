@@ -41,3 +41,4 @@ class CIInfo:
     VCPUBindingNode: Optional[str] = None  # vCPU绑定节点，虚拟机绑定的物理节点
     VGPUID: Optional[str] = None  # vGPUID，虚拟GPU实例标识
     VMID: Optional[str] = None  # 虚拟机ID，虚拟机唯一标识
+    VMTypeAlias: Optional[str] = None  # 计算集群别名，虚拟机所在计算集群的人性化显示名称

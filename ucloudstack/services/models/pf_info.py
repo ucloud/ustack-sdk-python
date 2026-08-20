@@ -10,12 +10,15 @@ from typing import Optional, List, Any, Dict
 class PFInfo:
     """"""
 
+    CanEnableSRIOV: Optional[bool] = None  # 当前是否可以启用SR-IOV，任一节点或网卡前置条件不满足时为false
     Code: Optional[str] = None  # 网卡型号标准编号，网卡型号标识
     DeviceName: Optional[str] = None  # 网卡名，操作系统设备名
     Driver: Optional[str] = None  # 驱动，网卡驱动名称
     NICStatus: Optional[NICStatus] = None  # 网卡状态，当前状态信息
     PCI: Optional[str] = None  # PCI位置，网卡PCI地址
     Product: Optional[str] = None  # 网卡型号，网卡型号名称
+    SRIOVEnableReason: Optional[str] = None  # 不能启用SR-IOV时的原因码
+    SRIOVState: Optional[str] = None  # SR-IOV状态，取值Enabling、Disabling、Enabled或Disabled
     UsedVFs: Optional[List[VFInfo]] = None  # 已使用的VF网卡列表
     VFLogicCount: Optional[int] = None  # 逻辑限制的VF数量，VFLogicCount<=VFPhyCount，VFLogicCount为0时以VFPhyCount为准
     VFPhyCount: Optional[int] = None  # 物理限制的VF数量，网卡物理上限

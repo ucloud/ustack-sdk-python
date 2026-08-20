@@ -16,15 +16,11 @@ class UpdateFlatNetworkRequest:
 
     DHCPServerIP: Optional[str] = None  # DHCP服务器IP地址，传值表示启用DHCP并设置服务IP，传空表示禁用DHCP
 
-    DNS: Optional[str] = None  # DNS配置，指定DNS服务器地址，多个服务器用逗号分隔，格式为IP地址列表；传空表示清除DNS配置
-
     Device: Optional[str] = None  # 物理网卡设备名称，更新网络绑定的物理网络接口
-
-    GatewayIP: Optional[str] = None  # 网关IP地址，更新网络的默认网关IP，必须在网段CIDR范围内
 
     IPRange: Optional[str] = None  # 可用IP范围，更新网络的可分配IP地址段，支持多个范围用逗号分隔，格式为192.168.1.10-192.168.1.20
 
-    UpdateMode: Optional[str] = None  # 更新模式，指定更新的字段范围，IPRange仅更新IP范围，Device更新设备和VLAN，DHCPServerIP更新DHCP配置，DNS更新DNS配置，GatewayIP更新网关IP，All全部更新；不指定时默认IPRange
+    UpdateMode: Optional[str] = None  # 更新模式，指定更新的字段范围，IPRange仅更新IP范围，Device更新设备和VLAN，DHCPServerIP更新DHCP配置，All全部更新；不指定时默认IPRange
 
     Vlan: Optional[str] = None  # VLAN标识，更新网络的VLAN隔离标记，可选，取值范围1-4094，不传或传0表示不设置VLAN
 

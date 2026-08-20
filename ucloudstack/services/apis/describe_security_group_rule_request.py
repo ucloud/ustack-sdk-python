@@ -16,8 +16,6 @@ class DescribeSecurityGroupRuleRequest:
 
     CompanyID: Optional[int] = None  # 租户ID，指定查询范围内的租户组织，若不指定则返回当前租户的规则
 
-    IsIn: Optional[str] = None  # 流量方向筛选，取值1为入站、0为出站；为空时返回全部方向规则
-
     Limit: Optional[int] = None  # 分页大小，指定每页返回的记录数
 
     Offset: Optional[int] = None  # 分页偏移量，指定跳过的记录数

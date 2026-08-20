@@ -11,24 +11,20 @@ from ucloudstack.services.apis.abort_image_multipart_upload_request import *
 from ucloudstack.services.apis.abort_image_multipart_upload_response import *
 from ucloudstack.services.apis.abort_migrate_paa_s_instance_request import *
 from ucloudstack.services.apis.abort_migrate_paa_s_instance_response import *
-from ucloudstack.services.apis.abort_migrate_vm_disk_request import *
-from ucloudstack.services.apis.abort_migrate_vm_disk_response import *
 from ucloudstack.services.apis.abort_migrate_vm_instance_request import *
 from ucloudstack.services.apis.abort_migrate_vm_instance_response import *
-from ucloudstack.services.apis.abort_vm_snapshot_request import *
-from ucloudstack.services.apis.abort_vm_snapshot_response import *
 from ucloudstack.services.apis.add_as_member_request import *
 from ucloudstack.services.apis.add_as_member_response import *
 from ucloudstack.services.apis.add_nodes_to_isolation_group_request import *
 from ucloudstack.services.apis.add_nodes_to_isolation_group_response import *
 from ucloudstack.services.apis.add_region_request import *
 from ucloudstack.services.apis.add_region_response import *
-from ucloudstack.services.apis.add_vm_disk_request import *
-from ucloudstack.services.apis.add_vm_disk_response import *
+from ucloudstack.services.apis.add_subnet_network_request import *
+from ucloudstack.services.apis.add_subnet_network_response import *
 from ucloudstack.services.apis.add_vm_to_isolation_group_request import *
 from ucloudstack.services.apis.add_vm_to_isolation_group_response import *
-from ucloudstack.services.apis.add_vmnic_request import *
-from ucloudstack.services.apis.add_vmnic_response import *
+from ucloudstack.services.apis.add_vpc_network_request import *
+from ucloudstack.services.apis.add_vpc_network_response import *
 from ucloudstack.services.apis.alias_set_request import *
 from ucloudstack.services.apis.alias_set_response import *
 from ucloudstack.services.apis.alias_storage_set_request import *
@@ -51,8 +47,6 @@ from ucloudstack.services.apis.allocate_pm_request import *
 from ucloudstack.services.apis.allocate_pm_response import *
 from ucloudstack.services.apis.allocate_pmvnc_session_request import *
 from ucloudstack.services.apis.allocate_pmvnc_session_response import *
-from ucloudstack.services.apis.allocate_redis_console_session_request import *
-from ucloudstack.services.apis.allocate_redis_console_session_response import *
 from ucloudstack.services.apis.allocate_usb_request import *
 from ucloudstack.services.apis.allocate_usb_response import *
 from ucloudstack.services.apis.allocate_vip_request import *
@@ -285,6 +279,8 @@ from ucloudstack.services.apis.create_subnet_request import *
 from ucloudstack.services.apis.create_subnet_response import *
 from ucloudstack.services.apis.create_subnet_route_request import *
 from ucloudstack.services.apis.create_subnet_route_response import *
+from ucloudstack.services.apis.create_super_node_request import *
+from ucloudstack.services.apis.create_super_node_response import *
 from ucloudstack.services.apis.create_tag_request import *
 from ucloudstack.services.apis.create_tag_response import *
 from ucloudstack.services.apis.create_timer_request import *
@@ -457,6 +453,8 @@ from ucloudstack.services.apis.delete_subnet_request import *
 from ucloudstack.services.apis.delete_subnet_response import *
 from ucloudstack.services.apis.delete_subnet_route_request import *
 from ucloudstack.services.apis.delete_subnet_route_response import *
+from ucloudstack.services.apis.delete_super_node_request import *
+from ucloudstack.services.apis.delete_super_node_response import *
 from ucloudstack.services.apis.delete_tag_request import *
 from ucloudstack.services.apis.delete_tag_response import *
 from ucloudstack.services.apis.delete_timer_request import *
@@ -469,8 +467,6 @@ from ucloudstack.services.apis.delete_vm_snapshot_request import *
 from ucloudstack.services.apis.delete_vm_snapshot_response import *
 from ucloudstack.services.apis.delete_vmc_request import *
 from ucloudstack.services.apis.delete_vmc_response import *
-from ucloudstack.services.apis.delete_vmnic_request import *
-from ucloudstack.services.apis.delete_vmnic_response import *
 from ucloudstack.services.apis.delete_vpc_request import *
 from ucloudstack.services.apis.delete_vpc_response import *
 from ucloudstack.services.apis.delete_vpn_tunnel_request import *
@@ -717,6 +713,8 @@ from ucloudstack.services.apis.describe_smc_request import *
 from ucloudstack.services.apis.describe_smc_response import *
 from ucloudstack.services.apis.describe_snapshot_request import *
 from ucloudstack.services.apis.describe_snapshot_response import *
+from ucloudstack.services.apis.describe_sriov_state_request import *
+from ucloudstack.services.apis.describe_sriov_state_response import *
 from ucloudstack.services.apis.describe_storage_set_request import *
 from ucloudstack.services.apis.describe_storage_set_response import *
 from ucloudstack.services.apis.describe_storage_set_sort_policy_request import *
@@ -727,6 +725,8 @@ from ucloudstack.services.apis.describe_subnet_request import *
 from ucloudstack.services.apis.describe_subnet_response import *
 from ucloudstack.services.apis.describe_subnet_route_request import *
 from ucloudstack.services.apis.describe_subnet_route_response import *
+from ucloudstack.services.apis.describe_super_node_request import *
+from ucloudstack.services.apis.describe_super_node_response import *
 from ucloudstack.services.apis.describe_tag_request import *
 from ucloudstack.services.apis.describe_tag_resource_request import *
 from ucloudstack.services.apis.describe_tag_resource_response import *
@@ -949,8 +949,6 @@ from ucloudstack.services.apis.get_vip_price_request import *
 from ucloudstack.services.apis.get_vip_price_response import *
 from ucloudstack.services.apis.get_vm_instance_price_request import *
 from ucloudstack.services.apis.get_vm_instance_price_response import *
-from ucloudstack.services.apis.get_vm_screenshot_request import *
-from ucloudstack.services.apis.get_vm_screenshot_response import *
 from ucloudstack.services.apis.get_vm_spice_info_request import *
 from ucloudstack.services.apis.get_vm_spice_info_response import *
 from ucloudstack.services.apis.get_vm_ware_cluster_datastore_request import *
@@ -1001,8 +999,6 @@ from ucloudstack.services.apis.list_product_type_companys_request import *
 from ucloudstack.services.apis.list_product_type_companys_response import *
 from ucloudstack.services.apis.list_projects_request import *
 from ucloudstack.services.apis.list_projects_response import *
-from ucloudstack.services.apis.list_region_config_sync_status_request import *
-from ucloudstack.services.apis.list_region_config_sync_status_response import *
 from ucloudstack.services.apis.list_region_configs_request import *
 from ucloudstack.services.apis.list_region_configs_response import *
 from ucloudstack.services.apis.list_resource_usages_request import *
@@ -1037,8 +1033,6 @@ from ucloudstack.services.apis.move_project_resource_request import *
 from ucloudstack.services.apis.move_project_resource_response import *
 from ucloudstack.services.apis.open_host_numa_schedule_request import *
 from ucloudstack.services.apis.open_host_numa_schedule_response import *
-from ucloudstack.services.apis.operate_alert_request import *
-from ucloudstack.services.apis.operate_alert_response import *
 from ucloudstack.services.apis.operate_orch_task_request import *
 from ucloudstack.services.apis.operate_orch_task_response import *
 from ucloudstack.services.apis.pause_dbs_backup_request import *
@@ -1071,8 +1065,12 @@ from ucloudstack.services.apis.remove_as_member_request import *
 from ucloudstack.services.apis.remove_as_member_response import *
 from ucloudstack.services.apis.remove_nodes_from_isolation_group_request import *
 from ucloudstack.services.apis.remove_nodes_from_isolation_group_response import *
+from ucloudstack.services.apis.remove_subnet_network_request import *
+from ucloudstack.services.apis.remove_subnet_network_response import *
 from ucloudstack.services.apis.remove_vm_from_isolation_group_request import *
 from ucloudstack.services.apis.remove_vm_from_isolation_group_response import *
+from ucloudstack.services.apis.remove_vpc_network_request import *
+from ucloudstack.services.apis.remove_vpc_network_response import *
 from ucloudstack.services.apis.rename_company_request import *
 from ucloudstack.services.apis.rename_company_response import *
 from ucloudstack.services.apis.rename_project_request import *
@@ -1105,8 +1103,6 @@ from ucloudstack.services.apis.resume_dbs_backup_request import *
 from ucloudstack.services.apis.resume_dbs_backup_response import *
 from ucloudstack.services.apis.retry_install_task_v2_request import *
 from ucloudstack.services.apis.retry_install_task_v2_response import *
-from ucloudstack.services.apis.retry_resource_usage_request import *
-from ucloudstack.services.apis.retry_resource_usage_response import *
 from ucloudstack.services.apis.rollback_resource_request import *
 from ucloudstack.services.apis.rollback_resource_response import *
 from ucloudstack.services.apis.rollback_snapshot_request import *
@@ -1311,8 +1307,6 @@ from ucloudstack.services.apis.update_nic_traffic_shaping_request import *
 from ucloudstack.services.apis.update_nic_traffic_shaping_response import *
 from ucloudstack.services.apis.update_nicip_bandwidth_request import *
 from ucloudstack.services.apis.update_nicip_bandwidth_response import *
-from ucloudstack.services.apis.update_nicip_request import *
-from ucloudstack.services.apis.update_nicip_response import *
 from ucloudstack.services.apis.update_nicmac_request import *
 from ucloudstack.services.apis.update_nicmac_response import *
 from ucloudstack.services.apis.update_nicpf_request import *
@@ -1363,10 +1357,16 @@ from ucloudstack.services.apis.update_sg_from_lb_request import *
 from ucloudstack.services.apis.update_sg_from_lb_response import *
 from ucloudstack.services.apis.update_sg_from_natgw_request import *
 from ucloudstack.services.apis.update_sg_from_natgw_response import *
+from ucloudstack.services.apis.update_sriov_state_request import *
+from ucloudstack.services.apis.update_sriov_state_response import *
 from ucloudstack.services.apis.update_storage_set_sort_policy_request import *
 from ucloudstack.services.apis.update_storage_set_sort_policy_response import *
 from ucloudstack.services.apis.update_subnet_route_request import *
 from ucloudstack.services.apis.update_subnet_route_response import *
+from ucloudstack.services.apis.update_super_node_gpu_request import *
+from ucloudstack.services.apis.update_super_node_gpu_response import *
+from ucloudstack.services.apis.update_super_node_request import *
+from ucloudstack.services.apis.update_super_node_response import *
 from ucloudstack.services.apis.update_termination_policy_request import *
 from ucloudstack.services.apis.update_termination_policy_response import *
 from ucloudstack.services.apis.update_timer_request import *
@@ -1387,48 +1387,14 @@ from ucloudstack.services.apis.update_vip_bind_resource_request import *
 from ucloudstack.services.apis.update_vip_bind_resource_response import *
 from ucloudstack.services.apis.update_vm_advanced_options_request import *
 from ucloudstack.services.apis.update_vm_advanced_options_response import *
-from ucloudstack.services.apis.update_vm_boot_boot_loader_type_request import *
-from ucloudstack.services.apis.update_vm_boot_boot_loader_type_response import *
-from ucloudstack.services.apis.update_vm_boot_devices_request import *
-from ucloudstack.services.apis.update_vm_boot_devices_response import *
 from ucloudstack.services.apis.update_vm_default_gw_request import *
 from ucloudstack.services.apis.update_vm_default_gw_response import *
-from ucloudstack.services.apis.update_vm_disk_bus_request import *
-from ucloudstack.services.apis.update_vm_disk_bus_response import *
-from ucloudstack.services.apis.update_vm_disk_cache_mode_request import *
-from ucloudstack.services.apis.update_vm_disk_cache_mode_response import *
-from ucloudstack.services.apis.update_vm_high_availability_request import *
-from ucloudstack.services.apis.update_vm_high_availability_response import *
 from ucloudstack.services.apis.update_vm_set_bound_image_request import *
 from ucloudstack.services.apis.update_vm_set_bound_image_response import *
 from ucloudstack.services.apis.update_vm_set_bound_storage_set_request import *
 from ucloudstack.services.apis.update_vm_set_bound_storage_set_response import *
-from ucloudstack.services.apis.update_vm_support_hot_plug_request import *
-from ucloudstack.services.apis.update_vm_support_hot_plug_response import *
-from ucloudstack.services.apis.update_vm_user_data_request import *
-from ucloudstack.services.apis.update_vm_user_data_response import *
-from ucloudstack.services.apis.update_vmcpu_hypervisor_request import *
-from ucloudstack.services.apis.update_vmcpu_hypervisor_response import *
-from ucloudstack.services.apis.update_vmcpu_limit_percent_request import *
-from ucloudstack.services.apis.update_vmcpu_limit_percent_response import *
-from ucloudstack.services.apis.update_vmcpu_model_request import *
-from ucloudstack.services.apis.update_vmcpu_model_response import *
-from ucloudstack.services.apis.update_vmcpu_priority_request import *
-from ucloudstack.services.apis.update_vmcpu_priority_response import *
-from ucloudstack.services.apis.update_vmdns_request import *
-from ucloudstack.services.apis.update_vmdns_response import *
-from ucloudstack.services.apis.update_vmiso_slot_request import *
-from ucloudstack.services.apis.update_vmiso_slot_response import *
 from ucloudstack.services.apis.update_vmmac_request import *
 from ucloudstack.services.apis.update_vmmac_response import *
-from ucloudstack.services.apis.update_vmnic_link_state_request import *
-from ucloudstack.services.apis.update_vmnic_link_state_response import *
-from ucloudstack.services.apis.update_vmnic_model_request import *
-from ucloudstack.services.apis.update_vmnic_model_response import *
-from ucloudstack.services.apis.update_vmnic_queues_request import *
-from ucloudstack.services.apis.update_vmnic_queues_response import *
-from ucloudstack.services.apis.update_vmos_request import *
-from ucloudstack.services.apis.update_vmos_response import *
 from ucloudstack.services.apis.update_vmvcpu_binding_request import *
 from ucloudstack.services.apis.update_vmvcpu_binding_response import *
 from ucloudstack.services.apis.update_vpn_tunnel_request import *
@@ -1626,12 +1592,6 @@ class UCloudStackClient(CoreClient):
         """获取资源事件通知规则"""
         d = self._to_plain(req)
         resp = self.invoke("DescribeResourceEventNotifyRule", d, **kwargs)
-        return resp
-
-    def operate_alert(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """操作告警处理状态"""
-        d = self._to_plain(req)
-        resp = self.invoke("OperateAlert", d, **kwargs)
         return resp
 
     def prometheus_query(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
@@ -2094,12 +2054,6 @@ class UCloudStackClient(CoreClient):
         """按照类型和地域获取全局配置"""
         d = self._to_plain(req)
         resp = self.invoke("ListGlobalConfigs", d, **kwargs)
-        return resp
-
-    def list_region_config_sync_status(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """查询地域配置同步状态"""
-        d = self._to_plain(req)
-        resp = self.invoke("ListRegionConfigSyncStatus", d, **kwargs)
         return resp
 
     def list_region_configs(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
@@ -2696,6 +2650,12 @@ class UCloudStackClient(CoreClient):
         resp = self.invoke("DescribeNodeNUMAInfo", d, **kwargs)
         return resp
 
+    def describe_sriov_state(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
+        """查询物理网卡SR-IOV状态"""
+        d = self._to_plain(req)
+        resp = self.invoke("DescribeSRIOVState", d, **kwargs)
+        return resp
+
     def describe_vm_host(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
         """获取虚拟机物理机信息"""
         d = self._to_plain(req)
@@ -2754,6 +2714,12 @@ class UCloudStackClient(CoreClient):
         """更新节点 CPU 电源模式"""
         d = self._to_plain(req)
         resp = self.invoke("UpdateNodeCPUGovernor", d, **kwargs)
+        return resp
+
+    def update_sriov_state(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
+        """启用或禁用物理网卡SR-IOV"""
+        d = self._to_plain(req)
+        resp = self.invoke("UpdateSRIOVState", d, **kwargs)
         return resp
 
     def update_vf_logic_count(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
@@ -2948,12 +2914,6 @@ class UCloudStackClient(CoreClient):
         resp = self.invoke("ListResourceUsages", d, **kwargs)
         return resp
 
-    def retry_resource_usage(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """重试重新生成资源使用情况报告"""
-        d = self._to_plain(req)
-        resp = self.invoke("RetryResourceUsage", d, **kwargs)
-        return resp
-
     def allocate_e_ip(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
         """申请弹性IP"""
         d = self._to_plain(req)
@@ -3104,6 +3064,12 @@ class UCloudStackClient(CoreClient):
         resp = self.invoke("CreateNativeNode", d, **kwargs)
         return resp
 
+    def create_super_node(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
+        """创建k8s集群SuperNode"""
+        d = self._to_plain(req)
+        resp = self.invoke("CreateSuperNode", d, **kwargs)
+        return resp
+
     def delete_cluster(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
         """删除k8s集群"""
         d = self._to_plain(req)
@@ -3116,6 +3082,12 @@ class UCloudStackClient(CoreClient):
         resp = self.invoke("DeleteNativeNode", d, **kwargs)
         return resp
 
+    def delete_super_node(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
+        """删除k8s集群SuperNode"""
+        d = self._to_plain(req)
+        resp = self.invoke("DeleteSuperNode", d, **kwargs)
+        return resp
+
     def describe_cluster(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
         """查询k8s集群"""
         d = self._to_plain(req)
@@ -3126,6 +3098,12 @@ class UCloudStackClient(CoreClient):
         """查询k8s集群原生节点"""
         d = self._to_plain(req)
         resp = self.invoke("DescribeNativeNode", d, **kwargs)
+        return resp
+
+    def describe_super_node(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
+        """查询k8s集群Node"""
+        d = self._to_plain(req)
+        resp = self.invoke("DescribeSuperNode", d, **kwargs)
         return resp
 
     def detach_cluster_e_ip(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
@@ -3186,6 +3164,18 @@ class UCloudStackClient(CoreClient):
         """更新k8s集群NativeNode外网"""
         d = self._to_plain(req)
         resp = self.invoke("UpdateNativeNodeWAN", d, **kwargs)
+        return resp
+
+    def update_super_node(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
+        """更新k8s集群SuperNode"""
+        d = self._to_plain(req)
+        resp = self.invoke("UpdateSuperNode", d, **kwargs)
+        return resp
+
+    def update_super_node_gpu(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
+        """更新k8s集群SuperNodeGPU"""
+        d = self._to_plain(req)
+        resp = self.invoke("UpdateSuperNodeGPU", d, **kwargs)
         return resp
 
     def bind_eip_to_lb(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
@@ -3735,13 +3725,13 @@ class UCloudStackClient(CoreClient):
         return resp
 
     def create_nic(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """创建弹性网卡"""
+        """创建网卡"""
         d = self._to_plain(req)
         resp = self.invoke("CreateNIC", d, **kwargs)
         return resp
 
     def delete_nic(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """删除弹性网卡"""
+        """删除网卡"""
         d = self._to_plain(req)
         resp = self.invoke("DeleteNIC", d, **kwargs)
         return resp
@@ -3768,12 +3758,6 @@ class UCloudStackClient(CoreClient):
         """获取更新弹性网卡价格"""
         d = self._to_plain(req)
         resp = self.invoke("GetUpdateNICPrice", d, **kwargs)
-        return resp
-
-    def update_nic_ip(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """更新网卡的IP"""
-        d = self._to_plain(req)
-        resp = self.invoke("UpdateNICIP", d, **kwargs)
         return resp
 
     def update_nicip_bandwidth(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
@@ -4524,12 +4508,6 @@ class UCloudStackClient(CoreClient):
         """销毁资源"""
         d = self._to_plain(req)
         resp = self.invoke("TerminateResource", d, **kwargs)
-        return resp
-
-    def allocate_redis_console_session(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """申请redis控制台会话"""
-        d = self._to_plain(req)
-        resp = self.invoke("AllocateRedisConsoleSession", d, **kwargs)
         return resp
 
     def apply_redis_config_file(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
@@ -5288,30 +5266,6 @@ class UCloudStackClient(CoreClient):
         resp = self.invoke("UpdateVIPBindResource", d, **kwargs)
         return resp
 
-    def abort_migrate_vm_disk(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """取消虚拟机热存储迁移"""
-        d = self._to_plain(req)
-        resp = self.invoke("AbortMigrateVMDisk", d, **kwargs)
-        return resp
-
-    def abort_vm_snapshot(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """取消虚拟机整机快照"""
-        d = self._to_plain(req)
-        resp = self.invoke("AbortVMSnapshot", d, **kwargs)
-        return resp
-
-    def add_vm_disk(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """添加虚拟机磁盘"""
-        d = self._to_plain(req)
-        resp = self.invoke("AddVMDisk", d, **kwargs)
-        return resp
-
-    def add_vmnic(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """添加虚拟机网卡"""
-        d = self._to_plain(req)
-        resp = self.invoke("AddVMNIC", d, **kwargs)
-        return resp
-
     def allocate_vmssh_session(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
         """申请虚拟机SSH会话"""
         d = self._to_plain(req)
@@ -5352,12 +5306,6 @@ class UCloudStackClient(CoreClient):
         """删除虚拟机"""
         d = self._to_plain(req)
         resp = self.invoke("DeleteVMInstance", d, **kwargs)
-        return resp
-
-    def delete_vmnic(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """删除虚拟机网卡"""
-        d = self._to_plain(req)
-        resp = self.invoke("DeleteVMNIC", d, **kwargs)
         return resp
 
     def delete_vm_snapshot(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
@@ -5406,12 +5354,6 @@ class UCloudStackClient(CoreClient):
         """获取虚拟机价格"""
         d = self._to_plain(req)
         resp = self.invoke("GetVMInstancePrice", d, **kwargs)
-        return resp
-
-    def get_vm_screenshot(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """获取截屏"""
-        d = self._to_plain(req)
-        resp = self.invoke("GetVMScreenshot", d, **kwargs)
         return resp
 
     def get_vm_spice_info(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
@@ -5523,51 +5465,9 @@ class UCloudStackClient(CoreClient):
         return resp
 
     def update_vm_advanced_options(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """设置虚拟机高级参数(DNS)"""
+        """设置虚拟机高级参数"""
         d = self._to_plain(req)
         resp = self.invoke("UpdateVMAdvancedOptions", d, **kwargs)
-        return resp
-
-    def update_vm_boot_boot_loader_type(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """设置虚拟机引导方式"""
-        d = self._to_plain(req)
-        resp = self.invoke("UpdateVMBootBootLoaderType", d, **kwargs)
-        return resp
-
-    def update_vm_boot_devices(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """设置虚拟机引导顺序"""
-        d = self._to_plain(req)
-        resp = self.invoke("UpdateVMBootDevices", d, **kwargs)
-        return resp
-
-    def update_vmcpu_hypervisor(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """设置虚拟机CPU虚拟化隐藏标记"""
-        d = self._to_plain(req)
-        resp = self.invoke("UpdateVMCPUHypervisor", d, **kwargs)
-        return resp
-
-    def update_vmcpu_limit_percent(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """修改虚拟机CPU资源限制"""
-        d = self._to_plain(req)
-        resp = self.invoke("UpdateVMCPULimitPercent", d, **kwargs)
-        return resp
-
-    def update_vmcpu_model(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """设置虚拟机cpu模型"""
-        d = self._to_plain(req)
-        resp = self.invoke("UpdateVMCPUModel", d, **kwargs)
-        return resp
-
-    def update_vmcpu_priority(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """修改虚拟机CPU资源优先级"""
-        d = self._to_plain(req)
-        resp = self.invoke("UpdateVMCPUPriority", d, **kwargs)
-        return resp
-
-    def update_vmdns(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """设置虚拟机DNS"""
-        d = self._to_plain(req)
-        resp = self.invoke("UpdateVMDNS", d, **kwargs)
         return resp
 
     def update_vm_default_gw(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
@@ -5576,76 +5476,28 @@ class UCloudStackClient(CoreClient):
         resp = self.invoke("UpdateVMDefaultGW", d, **kwargs)
         return resp
 
-    def update_vm_disk_bus(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """更新磁盘总线类型"""
-        d = self._to_plain(req)
-        resp = self.invoke("UpdateVMDiskBus", d, **kwargs)
-        return resp
-
-    def update_vm_disk_cache_mode(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """设置虚拟机磁盘缓存类型"""
-        d = self._to_plain(req)
-        resp = self.invoke("UpdateVMDiskCacheMode", d, **kwargs)
-        return resp
-
-    def update_vm_high_availability(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """设置虚拟机高可用"""
-        d = self._to_plain(req)
-        resp = self.invoke("UpdateVMHighAvailability", d, **kwargs)
-        return resp
-
-    def update_vmiso_slot(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """设置虚拟机iso插槽数量"""
-        d = self._to_plain(req)
-        resp = self.invoke("UpdateVMISOSlot", d, **kwargs)
-        return resp
-
     def update_vmmac(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
         """修改网卡的MAC"""
         d = self._to_plain(req)
         resp = self.invoke("UpdateVMMAC", d, **kwargs)
         return resp
 
-    def update_vmnic_link_state(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """更新虚拟机网卡启用状态"""
-        d = self._to_plain(req)
-        resp = self.invoke("UpdateVMNICLinkState", d, **kwargs)
-        return resp
-
-    def update_vmnic_model(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """更新虚拟机网卡型号"""
-        d = self._to_plain(req)
-        resp = self.invoke("UpdateVMNICModel", d, **kwargs)
-        return resp
-
-    def update_vmnic_queues(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """更新虚拟机网卡队列"""
-        d = self._to_plain(req)
-        resp = self.invoke("UpdateVMNICQueues", d, **kwargs)
-        return resp
-
-    def update_vmos(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """更新虚拟机操作系统"""
-        d = self._to_plain(req)
-        resp = self.invoke("UpdateVMOS", d, **kwargs)
-        return resp
-
-    def update_vm_support_hot_plug(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """更新虚拟机热插拔"""
-        d = self._to_plain(req)
-        resp = self.invoke("UpdateVMSupportHotPlug", d, **kwargs)
-        return resp
-
-    def update_vm_user_data(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """设置虚拟机用户数据"""
-        d = self._to_plain(req)
-        resp = self.invoke("UpdateVMUserData", d, **kwargs)
-        return resp
-
     def update_vmvcpu_binding(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
         """虚拟机更新VCPU绑定"""
         d = self._to_plain(req)
         resp = self.invoke("UpdateVMVCPUBinding", d, **kwargs)
+        return resp
+
+    def add_subnet_network(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
+        """添加子网IPv6网络"""
+        d = self._to_plain(req)
+        resp = self.invoke("AddSubnetNetwork", d, **kwargs)
+        return resp
+
+    def add_vpc_network(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
+        """添加VPC IPv6网络"""
+        d = self._to_plain(req)
+        resp = self.invoke("AddVPCNetwork", d, **kwargs)
         return resp
 
     def associate_vpc_peering(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
@@ -5724,6 +5576,18 @@ class UCloudStackClient(CoreClient):
         """获取子网中申请出来的IP列表"""
         d = self._to_plain(req)
         resp = self.invoke("ListAllocatedIPsInSubnet", d, **kwargs)
+        return resp
+
+    def remove_subnet_network(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
+        """移除子网IPv6网络"""
+        d = self._to_plain(req)
+        resp = self.invoke("RemoveSubnetNetwork", d, **kwargs)
+        return resp
+
+    def remove_vpc_network(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
+        """移除VPC IPv6网络"""
+        d = self._to_plain(req)
+        resp = self.invoke("RemoveVPCNetwork", d, **kwargs)
         return resp
 
     def replace_ip(self, req: typing.Optional[dict] = None, **kwargs) -> dict:

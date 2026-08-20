@@ -22,11 +22,7 @@ class CreateFlatNetworkRequest:
 
     DHCPServerIP: Optional[str] = None  # DHCP服务器IP地址，指定DHCP服务监听的IP地址，启用DHCP时建议传入，不启用时为空
 
-    DNS: Optional[str] = None  # DNS配置，指定DNS服务器地址，多个服务器用逗号分隔，格式为IP地址列表
-
     EnableDHCP: Optional[bool] = None  # 是否开启DHCP服务，启用后将为接入网络的主机自动分配IP地址
-
-    GatewayIP: Optional[str] = None  # 网关IP地址，指定网络的默认网关IP，必须在网段CIDR范围内
 
     IPRange: Optional[str] = None  # 可用IP范围，指定从网段中可分配的IP地址范围，支持多个范围用逗号分隔，格式为192.168.1.10-192.168.1.20
 

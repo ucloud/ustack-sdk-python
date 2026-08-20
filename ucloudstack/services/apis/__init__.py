@@ -7,24 +7,20 @@ from .abort_image_multipart_upload_request import AbortImageMultipartUploadReque
 from .abort_image_multipart_upload_response import AbortImageMultipartUploadResponse
 from .abort_migrate_paa_s_instance_request import AbortMigratePaaSInstanceRequest
 from .abort_migrate_paa_s_instance_response import AbortMigratePaaSInstanceResponse
-from .abort_migrate_vm_disk_request import AbortMigrateVMDiskRequest
-from .abort_migrate_vm_disk_response import AbortMigrateVMDiskResponse
 from .abort_migrate_vm_instance_request import AbortMigrateVMInstanceRequest
 from .abort_migrate_vm_instance_response import AbortMigrateVMInstanceResponse
-from .abort_vm_snapshot_request import AbortVMSnapshotRequest
-from .abort_vm_snapshot_response import AbortVMSnapshotResponse
 from .add_as_member_request import AddASMemberRequest
 from .add_as_member_response import AddASMemberResponse
 from .add_nodes_to_isolation_group_request import AddNodesToIsolationGroupRequest
 from .add_nodes_to_isolation_group_response import AddNodesToIsolationGroupResponse
 from .add_region_request import AddRegionRequest
 from .add_region_response import AddRegionResponse
-from .add_vm_disk_request import AddVMDiskRequest
-from .add_vm_disk_response import AddVMDiskResponse
-from .add_vmnic_request import AddVMNICRequest
-from .add_vmnic_response import AddVMNICResponse
+from .add_subnet_network_request import AddSubnetNetworkRequest
+from .add_subnet_network_response import AddSubnetNetworkResponse
 from .add_vm_to_isolation_group_request import AddVMToIsolationGroupRequest
 from .add_vm_to_isolation_group_response import AddVMToIsolationGroupResponse
+from .add_vpc_network_request import AddVPCNetworkRequest
+from .add_vpc_network_response import AddVPCNetworkResponse
 from .alias_set_request import AliasSetRequest
 from .alias_set_response import AliasSetResponse
 from .alias_storage_set_request import AliasStorageSetRequest
@@ -47,8 +43,6 @@ from .allocate_pm_request import AllocatePMRequest
 from .allocate_pm_response import AllocatePMResponse
 from .allocate_pmvnc_session_request import AllocatePMVNCSessionRequest
 from .allocate_pmvnc_session_response import AllocatePMVNCSessionResponse
-from .allocate_redis_console_session_request import AllocateRedisConsoleSessionRequest
-from .allocate_redis_console_session_response import AllocateRedisConsoleSessionResponse
 from .allocate_usb_request import AllocateUSBRequest
 from .allocate_usb_response import AllocateUSBResponse
 from .allocate_vip_request import AllocateVIPRequest
@@ -281,6 +275,8 @@ from .create_subnet_request import CreateSubnetRequest
 from .create_subnet_response import CreateSubnetResponse
 from .create_subnet_route_request import CreateSubnetRouteRequest
 from .create_subnet_route_response import CreateSubnetRouteResponse
+from .create_super_node_request import CreateSuperNodeRequest
+from .create_super_node_response import CreateSuperNodeResponse
 from .create_tag_request import CreateTagRequest
 from .create_tag_response import CreateTagResponse
 from .create_timer_request import CreateTimerRequest
@@ -455,6 +451,8 @@ from .delete_subnet_request import DeleteSubnetRequest
 from .delete_subnet_response import DeleteSubnetResponse
 from .delete_subnet_route_request import DeleteSubnetRouteRequest
 from .delete_subnet_route_response import DeleteSubnetRouteResponse
+from .delete_super_node_request import DeleteSuperNodeRequest
+from .delete_super_node_response import DeleteSuperNodeResponse
 from .delete_tag_request import DeleteTagRequest
 from .delete_tag_response import DeleteTagResponse
 from .delete_timer_request import DeleteTimerRequest
@@ -465,8 +463,6 @@ from .delete_vmc_request import DeleteVMCRequest
 from .delete_vmc_response import DeleteVMCResponse
 from .delete_vm_instance_request import DeleteVMInstanceRequest
 from .delete_vm_instance_response import DeleteVMInstanceResponse
-from .delete_vmnic_request import DeleteVMNICRequest
-from .delete_vmnic_response import DeleteVMNICResponse
 from .delete_vm_snapshot_request import DeleteVMSnapshotRequest
 from .delete_vm_snapshot_response import DeleteVMSnapshotResponse
 from .delete_vpc_request import DeleteVPCRequest
@@ -701,6 +697,8 @@ from .describe_resource_users_request import DescribeResourceUsersRequest
 from .describe_resource_users_response import DescribeResourceUsersResponse
 from .describe_smc_request import DescribeSMCRequest
 from .describe_smc_response import DescribeSMCResponse
+from .describe_sriov_state_request import DescribeSRIOVStateRequest
+from .describe_sriov_state_response import DescribeSRIOVStateResponse
 from .describe_security_group_request import DescribeSecurityGroupRequest
 from .describe_security_group_resource_request import DescribeSecurityGroupResourceRequest
 from .describe_security_group_resource_response import DescribeSecurityGroupResourceResponse
@@ -725,6 +723,8 @@ from .describe_subnet_request import DescribeSubnetRequest
 from .describe_subnet_response import DescribeSubnetResponse
 from .describe_subnet_route_request import DescribeSubnetRouteRequest
 from .describe_subnet_route_response import DescribeSubnetRouteResponse
+from .describe_super_node_request import DescribeSuperNodeRequest
+from .describe_super_node_response import DescribeSuperNodeResponse
 from .describe_tag_request import DescribeTagRequest
 from .describe_tag_resource_request import DescribeTagResourceRequest
 from .describe_tag_resource_response import DescribeTagResourceResponse
@@ -945,8 +945,6 @@ from .get_vip_price_request import GetVIPPriceRequest
 from .get_vip_price_response import GetVIPPriceResponse
 from .get_vm_instance_price_request import GetVMInstancePriceRequest
 from .get_vm_instance_price_response import GetVMInstancePriceResponse
-from .get_vm_screenshot_request import GetVMScreenshotRequest
-from .get_vm_screenshot_response import GetVMScreenshotResponse
 from .get_vm_spice_info_request import GetVMSpiceInfoRequest
 from .get_vm_spice_info_response import GetVMSpiceInfoResponse
 from .get_vmvnc_info_request import GetVMVNCInfoRequest
@@ -997,8 +995,6 @@ from .list_product_type_companys_request import ListProductTypeCompanysRequest
 from .list_product_type_companys_response import ListProductTypeCompanysResponse
 from .list_projects_request import ListProjectsRequest
 from .list_projects_response import ListProjectsResponse
-from .list_region_config_sync_status_request import ListRegionConfigSyncStatusRequest
-from .list_region_config_sync_status_response import ListRegionConfigSyncStatusResponse
 from .list_region_configs_request import ListRegionConfigsRequest
 from .list_region_configs_response import ListRegionConfigsResponse
 from .list_resource_usages_request import ListResourceUsagesRequest
@@ -1033,8 +1029,6 @@ from .move_project_resource_request import MoveProjectResourceRequest
 from .move_project_resource_response import MoveProjectResourceResponse
 from .open_host_numa_schedule_request import OpenHostNUMAScheduleRequest
 from .open_host_numa_schedule_response import OpenHostNUMAScheduleResponse
-from .operate_alert_request import OperateAlertRequest
-from .operate_alert_response import OperateAlertResponse
 from .operate_orch_task_request import OperateOrchTaskRequest
 from .operate_orch_task_response import OperateOrchTaskResponse
 from .pause_dbs_backup_request import PauseDBSBackupRequest
@@ -1067,8 +1061,12 @@ from .remove_as_member_request import RemoveASMemberRequest
 from .remove_as_member_response import RemoveASMemberResponse
 from .remove_nodes_from_isolation_group_request import RemoveNodesFromIsolationGroupRequest
 from .remove_nodes_from_isolation_group_response import RemoveNodesFromIsolationGroupResponse
+from .remove_subnet_network_request import RemoveSubnetNetworkRequest
+from .remove_subnet_network_response import RemoveSubnetNetworkResponse
 from .remove_vm_from_isolation_group_request import RemoveVMFromIsolationGroupRequest
 from .remove_vm_from_isolation_group_response import RemoveVMFromIsolationGroupResponse
+from .remove_vpc_network_request import RemoveVPCNetworkRequest
+from .remove_vpc_network_response import RemoveVPCNetworkResponse
 from .rename_company_request import RenameCompanyRequest
 from .rename_company_response import RenameCompanyResponse
 from .rename_project_request import RenameProjectRequest
@@ -1101,8 +1099,6 @@ from .resume_dbs_backup_request import ResumeDBSBackupRequest
 from .resume_dbs_backup_response import ResumeDBSBackupResponse
 from .retry_install_task_v2_request import RetryInstallTaskV2Request
 from .retry_install_task_v2_response import RetryInstallTaskV2Response
-from .retry_resource_usage_request import RetryResourceUsageRequest
-from .retry_resource_usage_response import RetryResourceUsageResponse
 from .rollback_resource_request import RollbackResourceRequest
 from .rollback_resource_response import RollbackResourceResponse
 from .rollback_snapshot_request import RollbackSnapshotRequest
@@ -1301,8 +1297,6 @@ from .update_natgw_rule_request import UpdateNATGWRuleRequest
 from .update_natgw_rule_response import UpdateNATGWRuleResponse
 from .update_nicip_bandwidth_request import UpdateNICIPBandwidthRequest
 from .update_nicip_bandwidth_response import UpdateNICIPBandwidthResponse
-from .update_nicip_request import UpdateNICIPRequest
-from .update_nicip_response import UpdateNICIPResponse
 from .update_nicmac_request import UpdateNICMACRequest
 from .update_nicmac_response import UpdateNICMACResponse
 from .update_nicpf_request import UpdateNICPFRequest
@@ -1353,6 +1347,8 @@ from .update_sg_from_lb_request import UpdateSGFromLBRequest
 from .update_sg_from_lb_response import UpdateSGFromLBResponse
 from .update_sg_from_natgw_request import UpdateSGFromNATGWRequest
 from .update_sg_from_natgw_response import UpdateSGFromNATGWResponse
+from .update_sriov_state_request import UpdateSRIOVStateRequest
+from .update_sriov_state_response import UpdateSRIOVStateResponse
 from .update_security_group_rule_request import UpdateSecurityGroupRuleRequest
 from .update_security_group_rule_response import UpdateSecurityGroupRuleResponse
 from .update_segment_request import UpdateSegmentRequest
@@ -1363,6 +1359,10 @@ from .update_storage_set_sort_policy_request import UpdateStorageSetSortPolicyRe
 from .update_storage_set_sort_policy_response import UpdateStorageSetSortPolicyResponse
 from .update_subnet_route_request import UpdateSubnetRouteRequest
 from .update_subnet_route_response import UpdateSubnetRouteResponse
+from .update_super_node_gpu_request import UpdateSuperNodeGPURequest
+from .update_super_node_gpu_response import UpdateSuperNodeGPUResponse
+from .update_super_node_request import UpdateSuperNodeRequest
+from .update_super_node_response import UpdateSuperNodeResponse
 from .update_termination_policy_request import UpdateTerminationPolicyRequest
 from .update_termination_policy_response import UpdateTerminationPolicyResponse
 from .update_timer_request import UpdateTimerRequest
@@ -1383,48 +1383,14 @@ from .update_vip_bind_resource_request import UpdateVIPBindResourceRequest
 from .update_vip_bind_resource_response import UpdateVIPBindResourceResponse
 from .update_vm_advanced_options_request import UpdateVMAdvancedOptionsRequest
 from .update_vm_advanced_options_response import UpdateVMAdvancedOptionsResponse
-from .update_vm_boot_boot_loader_type_request import UpdateVMBootBootLoaderTypeRequest
-from .update_vm_boot_boot_loader_type_response import UpdateVMBootBootLoaderTypeResponse
-from .update_vm_boot_devices_request import UpdateVMBootDevicesRequest
-from .update_vm_boot_devices_response import UpdateVMBootDevicesResponse
-from .update_vmcpu_hypervisor_request import UpdateVMCPUHypervisorRequest
-from .update_vmcpu_hypervisor_response import UpdateVMCPUHypervisorResponse
-from .update_vmcpu_limit_percent_request import UpdateVMCPULimitPercentRequest
-from .update_vmcpu_limit_percent_response import UpdateVMCPULimitPercentResponse
-from .update_vmcpu_model_request import UpdateVMCPUModelRequest
-from .update_vmcpu_model_response import UpdateVMCPUModelResponse
-from .update_vmcpu_priority_request import UpdateVMCPUPriorityRequest
-from .update_vmcpu_priority_response import UpdateVMCPUPriorityResponse
-from .update_vmdns_request import UpdateVMDNSRequest
-from .update_vmdns_response import UpdateVMDNSResponse
 from .update_vm_default_gw_request import UpdateVMDefaultGWRequest
 from .update_vm_default_gw_response import UpdateVMDefaultGWResponse
-from .update_vm_disk_bus_request import UpdateVMDiskBusRequest
-from .update_vm_disk_bus_response import UpdateVMDiskBusResponse
-from .update_vm_disk_cache_mode_request import UpdateVMDiskCacheModeRequest
-from .update_vm_disk_cache_mode_response import UpdateVMDiskCacheModeResponse
-from .update_vm_high_availability_request import UpdateVMHighAvailabilityRequest
-from .update_vm_high_availability_response import UpdateVMHighAvailabilityResponse
-from .update_vmiso_slot_request import UpdateVMISOSlotRequest
-from .update_vmiso_slot_response import UpdateVMISOSlotResponse
 from .update_vmmac_request import UpdateVMMACRequest
 from .update_vmmac_response import UpdateVMMACResponse
-from .update_vmnic_link_state_request import UpdateVMNICLinkStateRequest
-from .update_vmnic_link_state_response import UpdateVMNICLinkStateResponse
-from .update_vmnic_model_request import UpdateVMNICModelRequest
-from .update_vmnic_model_response import UpdateVMNICModelResponse
-from .update_vmnic_queues_request import UpdateVMNICQueuesRequest
-from .update_vmnic_queues_response import UpdateVMNICQueuesResponse
-from .update_vmos_request import UpdateVMOSRequest
-from .update_vmos_response import UpdateVMOSResponse
 from .update_vm_set_bound_image_request import UpdateVMSetBoundImageRequest
 from .update_vm_set_bound_image_response import UpdateVMSetBoundImageResponse
 from .update_vm_set_bound_storage_set_request import UpdateVMSetBoundStorageSetRequest
 from .update_vm_set_bound_storage_set_response import UpdateVMSetBoundStorageSetResponse
-from .update_vm_support_hot_plug_request import UpdateVMSupportHotPlugRequest
-from .update_vm_support_hot_plug_response import UpdateVMSupportHotPlugResponse
-from .update_vm_user_data_request import UpdateVMUserDataRequest
-from .update_vm_user_data_response import UpdateVMUserDataResponse
 from .update_vmvcpu_binding_request import UpdateVMVCPUBindingRequest
 from .update_vmvcpu_binding_response import UpdateVMVCPUBindingResponse
 from .update_vpn_tunnel_request import UpdateVPNTunnelRequest
@@ -1473,24 +1439,20 @@ __all__ = [
     'AbortImageMultipartUploadResponse',
     'AbortMigratePaaSInstanceRequest',
     'AbortMigratePaaSInstanceResponse',
-    'AbortMigrateVMDiskRequest',
-    'AbortMigrateVMDiskResponse',
     'AbortMigrateVMInstanceRequest',
     'AbortMigrateVMInstanceResponse',
-    'AbortVMSnapshotRequest',
-    'AbortVMSnapshotResponse',
     'AddASMemberRequest',
     'AddASMemberResponse',
     'AddNodesToIsolationGroupRequest',
     'AddNodesToIsolationGroupResponse',
     'AddRegionRequest',
     'AddRegionResponse',
-    'AddVMDiskRequest',
-    'AddVMDiskResponse',
-    'AddVMNICRequest',
-    'AddVMNICResponse',
+    'AddSubnetNetworkRequest',
+    'AddSubnetNetworkResponse',
     'AddVMToIsolationGroupRequest',
     'AddVMToIsolationGroupResponse',
+    'AddVPCNetworkRequest',
+    'AddVPCNetworkResponse',
     'AliasSetRequest',
     'AliasSetResponse',
     'AliasStorageSetRequest',
@@ -1513,8 +1475,6 @@ __all__ = [
     'AllocatePMResponse',
     'AllocatePMVNCSessionRequest',
     'AllocatePMVNCSessionResponse',
-    'AllocateRedisConsoleSessionRequest',
-    'AllocateRedisConsoleSessionResponse',
     'AllocateUSBRequest',
     'AllocateUSBResponse',
     'AllocateVIPRequest',
@@ -1747,6 +1707,8 @@ __all__ = [
     'CreateSubnetResponse',
     'CreateSubnetRouteRequest',
     'CreateSubnetRouteResponse',
+    'CreateSuperNodeRequest',
+    'CreateSuperNodeResponse',
     'CreateTagRequest',
     'CreateTagResponse',
     'CreateTimerRequest',
@@ -1921,6 +1883,8 @@ __all__ = [
     'DeleteSubnetResponse',
     'DeleteSubnetRouteRequest',
     'DeleteSubnetRouteResponse',
+    'DeleteSuperNodeRequest',
+    'DeleteSuperNodeResponse',
     'DeleteTagRequest',
     'DeleteTagResponse',
     'DeleteTimerRequest',
@@ -1931,8 +1895,6 @@ __all__ = [
     'DeleteVMCResponse',
     'DeleteVMInstanceRequest',
     'DeleteVMInstanceResponse',
-    'DeleteVMNICRequest',
-    'DeleteVMNICResponse',
     'DeleteVMSnapshotRequest',
     'DeleteVMSnapshotResponse',
     'DeleteVPCRequest',
@@ -2167,6 +2129,8 @@ __all__ = [
     'DescribeResourceUsersResponse',
     'DescribeSMCRequest',
     'DescribeSMCResponse',
+    'DescribeSRIOVStateRequest',
+    'DescribeSRIOVStateResponse',
     'DescribeSecurityGroupRequest',
     'DescribeSecurityGroupResourceRequest',
     'DescribeSecurityGroupResourceResponse',
@@ -2191,6 +2155,8 @@ __all__ = [
     'DescribeSubnetResponse',
     'DescribeSubnetRouteRequest',
     'DescribeSubnetRouteResponse',
+    'DescribeSuperNodeRequest',
+    'DescribeSuperNodeResponse',
     'DescribeTagRequest',
     'DescribeTagResourceRequest',
     'DescribeTagResourceResponse',
@@ -2411,8 +2377,6 @@ __all__ = [
     'GetVIPPriceResponse',
     'GetVMInstancePriceRequest',
     'GetVMInstancePriceResponse',
-    'GetVMScreenshotRequest',
-    'GetVMScreenshotResponse',
     'GetVMSpiceInfoRequest',
     'GetVMSpiceInfoResponse',
     'GetVMVNCInfoRequest',
@@ -2463,8 +2427,6 @@ __all__ = [
     'ListProductTypeCompanysResponse',
     'ListProjectsRequest',
     'ListProjectsResponse',
-    'ListRegionConfigSyncStatusRequest',
-    'ListRegionConfigSyncStatusResponse',
     'ListRegionConfigsRequest',
     'ListRegionConfigsResponse',
     'ListResourceUsagesRequest',
@@ -2499,8 +2461,6 @@ __all__ = [
     'MoveProjectResourceResponse',
     'OpenHostNUMAScheduleRequest',
     'OpenHostNUMAScheduleResponse',
-    'OperateAlertRequest',
-    'OperateAlertResponse',
     'OperateOrchTaskRequest',
     'OperateOrchTaskResponse',
     'PauseDBSBackupRequest',
@@ -2533,8 +2493,12 @@ __all__ = [
     'RemoveASMemberResponse',
     'RemoveNodesFromIsolationGroupRequest',
     'RemoveNodesFromIsolationGroupResponse',
+    'RemoveSubnetNetworkRequest',
+    'RemoveSubnetNetworkResponse',
     'RemoveVMFromIsolationGroupRequest',
     'RemoveVMFromIsolationGroupResponse',
+    'RemoveVPCNetworkRequest',
+    'RemoveVPCNetworkResponse',
     'RenameCompanyRequest',
     'RenameCompanyResponse',
     'RenameProjectRequest',
@@ -2567,8 +2531,6 @@ __all__ = [
     'ResumeDBSBackupResponse',
     'RetryInstallTaskV2Request',
     'RetryInstallTaskV2Response',
-    'RetryResourceUsageRequest',
-    'RetryResourceUsageResponse',
     'RollbackResourceRequest',
     'RollbackResourceResponse',
     'RollbackSnapshotRequest',
@@ -2767,8 +2729,6 @@ __all__ = [
     'UpdateNATGWRuleResponse',
     'UpdateNICIPBandwidthRequest',
     'UpdateNICIPBandwidthResponse',
-    'UpdateNICIPRequest',
-    'UpdateNICIPResponse',
     'UpdateNICMACRequest',
     'UpdateNICMACResponse',
     'UpdateNICPFRequest',
@@ -2819,6 +2779,8 @@ __all__ = [
     'UpdateSGFromLBResponse',
     'UpdateSGFromNATGWRequest',
     'UpdateSGFromNATGWResponse',
+    'UpdateSRIOVStateRequest',
+    'UpdateSRIOVStateResponse',
     'UpdateSecurityGroupRuleRequest',
     'UpdateSecurityGroupRuleResponse',
     'UpdateSegmentRequest',
@@ -2829,6 +2791,10 @@ __all__ = [
     'UpdateStorageSetSortPolicyResponse',
     'UpdateSubnetRouteRequest',
     'UpdateSubnetRouteResponse',
+    'UpdateSuperNodeGPURequest',
+    'UpdateSuperNodeGPUResponse',
+    'UpdateSuperNodeRequest',
+    'UpdateSuperNodeResponse',
     'UpdateTerminationPolicyRequest',
     'UpdateTerminationPolicyResponse',
     'UpdateTimerRequest',
@@ -2849,48 +2815,14 @@ __all__ = [
     'UpdateVIPBindResourceResponse',
     'UpdateVMAdvancedOptionsRequest',
     'UpdateVMAdvancedOptionsResponse',
-    'UpdateVMBootBootLoaderTypeRequest',
-    'UpdateVMBootBootLoaderTypeResponse',
-    'UpdateVMBootDevicesRequest',
-    'UpdateVMBootDevicesResponse',
-    'UpdateVMCPUHypervisorRequest',
-    'UpdateVMCPUHypervisorResponse',
-    'UpdateVMCPULimitPercentRequest',
-    'UpdateVMCPULimitPercentResponse',
-    'UpdateVMCPUModelRequest',
-    'UpdateVMCPUModelResponse',
-    'UpdateVMCPUPriorityRequest',
-    'UpdateVMCPUPriorityResponse',
-    'UpdateVMDNSRequest',
-    'UpdateVMDNSResponse',
     'UpdateVMDefaultGWRequest',
     'UpdateVMDefaultGWResponse',
-    'UpdateVMDiskBusRequest',
-    'UpdateVMDiskBusResponse',
-    'UpdateVMDiskCacheModeRequest',
-    'UpdateVMDiskCacheModeResponse',
-    'UpdateVMHighAvailabilityRequest',
-    'UpdateVMHighAvailabilityResponse',
-    'UpdateVMISOSlotRequest',
-    'UpdateVMISOSlotResponse',
     'UpdateVMMACRequest',
     'UpdateVMMACResponse',
-    'UpdateVMNICLinkStateRequest',
-    'UpdateVMNICLinkStateResponse',
-    'UpdateVMNICModelRequest',
-    'UpdateVMNICModelResponse',
-    'UpdateVMNICQueuesRequest',
-    'UpdateVMNICQueuesResponse',
-    'UpdateVMOSRequest',
-    'UpdateVMOSResponse',
     'UpdateVMSetBoundImageRequest',
     'UpdateVMSetBoundImageResponse',
     'UpdateVMSetBoundStorageSetRequest',
     'UpdateVMSetBoundStorageSetResponse',
-    'UpdateVMSupportHotPlugRequest',
-    'UpdateVMSupportHotPlugResponse',
-    'UpdateVMUserDataRequest',
-    'UpdateVMUserDataResponse',
     'UpdateVMVCPUBindingRequest',
     'UpdateVMVCPUBindingResponse',
     'UpdateVPNTunnelRequest',

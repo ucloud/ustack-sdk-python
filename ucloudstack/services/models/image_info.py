@@ -20,7 +20,7 @@ class ImageInfo:
     Email: Optional[str] = None  # 租户邮箱，归属租户的联系电子邮箱
     Encrypted: Optional[bool] = None  # 加密状态，标识镜像是否加密
     ImageDescription: Optional[str] = None  # 镜像描述，等同于Remark
-    ImageFormat: Optional[str] = None  # 镜像格式，返回值为qcow2、iso、vmdk、raw
+    ImageFormat: Optional[str] = None  # 镜像格式，返回值为qcow2或iso
     ImageFrom: Optional[str] = None  # 镜像来源，可能为vm-... image-...、远程URL、Local、System等
     ImageID: Optional[str] = None  # 镜像ID，镜像唯一标识
     ImageName: Optional[str] = None  # 镜像名称，等同于Name

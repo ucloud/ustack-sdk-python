@@ -16,8 +16,6 @@ class AttachDiskRequest:
 
     ResourceID: str  # 资源ID，要挂载磁盘的目标资源标识；根据磁盘和虚拟机状态，底层接口可能返回StatusDiskOverflowAttachLimit等挂载限制错误
 
-    CacheMode: Optional[str] = None  # 缓存类型，取值 directsync、none、writeback
-
     CompanyID: Optional[int] = None  # 租户ID，资源所属租户标识
 
     ResourceType: Optional[str] = None  # 资源类型，挂载目标的资源类型，当前仅用于兼容调用

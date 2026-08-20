@@ -28,11 +28,9 @@ class DescribeVMInstanceRequest:
 
     ProjectIDs: Optional[List[str]] = None  # 项目ID列表，用于资源分组管理
 
-    SearchField: Optional[str] = None  # 搜索字段，指定关键词匹配的字段，取值：Name（仅按名称字段模糊匹配）；不传或空值表示全字段匹配
+    SearchField: Optional[str] = None  # 搜索字段，指定关键词匹配的字段，取值：Name（名称，前缀匹配）；不传或空值表示全字段匹配
 
     SetID: Optional[str] = None  # 计算集群ID，过滤指定计算集群下的虚拟机
-
-    SimpleInfo: Optional[bool] = None  # 是否仅查询简略信息
 
     Sort: Optional[str] = None  # 排序方向，指定排序的升降序，取值：Ascending（升序）、Descending（降序）
 

@@ -52,7 +52,7 @@ class CreateVPNTunnelRequest:
 
     IPSecSALifetime: Optional[int] = None  # IPSec SA生存时间，IPSec安全关联生存时间（秒），超时后重新协商，取值范围：3600-86400，若不指定则默认为86400
 
-    ProjectID: Optional[str] = None  # 项目ID，用于标识资源所属项目分组，未传时尝试分配默认项目
+    ProjectID: Optional[str] = None  # 项目ID，用于标识资源所属项目分组
 
     Remark: Optional[str] = None  # 备注，长度0-100字符，禁止http://或https://等非法字符
 

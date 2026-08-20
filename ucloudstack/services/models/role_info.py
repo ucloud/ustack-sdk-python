@@ -15,5 +15,6 @@ class RoleInfo:
     Name: Optional[str] = None  # 角色名称，用于在控制台显示
     Remark: Optional[str] = None  # 备注，用于补充说明角色用途和权限范围
     RoleID: Optional[str] = None  # 角色ID，系统生成的权限定义唯一标识符
+    Stratum: Optional[str] = None  # 角色授权层级，取值：System、Region或Company
     Type: Optional[str] = None  # 角色类型，标识角色来源，取值：System或Custom
     UpdateTime: Optional[int] = None  # 更新时间，角色信息最后修改的Unix时间戳

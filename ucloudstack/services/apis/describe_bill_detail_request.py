@@ -14,6 +14,8 @@ class DescribeBillDetailRequest:
 
     EndTime: int  # 查询结束时间，账单的结束时间戳，单位为秒，时间范围不能超过2个月，必须大于起始时间且不超过起始时间加2个月
 
+    ProjectIDs: List[str]  # 项目组ID列表，过滤指定项目组的账单详情，不填写默认查询所有项目组
+
     ChargeTypes: Optional[List[str]] = None  # 计费类型列表，过滤指定计费类型的账单详情，Hour表示按小时计费、Month表示按月计费、Year表示按年计费，不填写默认查询所有计费类型
 
     CompanyIDs: Optional[List[int]] = None  # 租户ID列表，过滤指定租户的账单详情，不填写默认查询所有租户，普通租户权限自动限制为当前租户，系统管理员可查询所有租户
@@ -25,8 +27,6 @@ class DescribeBillDetailRequest:
     OrderTypes: Optional[List[str]] = None  # 订单类型列表，过滤指定订单类型的账单详情，BUY表示购买、RENEW表示续费、UPGRADE表示升级、DOWNGRADE表示降级、REFUND表示退款，不填写默认查询所有订单类型
 
     ProductTypes: Optional[List[str]] = None  # 产品类型列表，过滤指定产品类型的账单详情，不填写默认查询所有产品，产品类型从ListProductResources获取
-
-    ProjectIDs: Optional[List[str]] = None  # 项目组ID列表，过滤指定项目组的账单详情，不填写默认查询所有项目组；传空字符串时表示筛选未归属项目组数据
 
     Regions: Optional[List[str]] = None  # 地域列表，过滤指定地域的账单详情，不填写默认查询所有地域，支持多地域过滤
 

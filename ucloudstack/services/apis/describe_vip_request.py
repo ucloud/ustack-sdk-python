@@ -22,8 +22,6 @@ class DescribeVIPRequest:
 
     ProjectIDs: Optional[List[str]] = None  # 项目ID列表，一次可查询多个项目
 
-    Status: Optional[List[str]] = None  # 状态列表，按状态过滤VIP
-
     VIPIDs: Optional[List[str]] = None  # VIPID列表，VIP的唯一标识符
 
     VIPType: Optional[str] = None  # VIP类型，LAN为内网VIP，WAN为外网VIP

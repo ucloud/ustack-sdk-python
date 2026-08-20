@@ -14,15 +14,13 @@ class CreateClusterRequest:
 
     ComputeclassType: str  # 计算集群类型
 
-    K8SVersion: str  # k8s版本号。可为1.25.0
+    K8SVersion: str  # k8s版本号。可为1.25.0,1.34.9
 
     Name: str  # 名称
 
     Quantity: int  # 计费数量
 
     Region: str  # 地域
-
-    ServiceCIDR: str  # Service CIDR
 
     StorageclassType: str  # 存储集群类型
 
@@ -42,9 +40,11 @@ class CreateClusterRequest:
 
     PodSubnetIDs: Optional[List[str]] = None  # Pod子网ID
 
-    ProjectID: Optional[str] = None  # 项目组ID，未传时尝试分配默认项目
+    ProjectID: Optional[str] = None  # 项目组ID
 
     Remark: Optional[str] = None  # 备注
+
+    ServiceCIDR: Optional[str] = None  # Service CIDR 或 Serivce 所在子网Id
 
     TagKeyValuePairs: Optional[List[str]] = None  # 标签键值对
 

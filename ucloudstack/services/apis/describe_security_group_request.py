@@ -24,5 +24,5 @@ class DescribeSecurityGroupRequest:
 
     SGIDs: Optional[List[str]] = None  # 安全组ID列表，用于精确查询指定的安全组
 
-    Status: Optional[List[str]] = None  # 安全组状态列表，用于按多个状态过滤安全组，支持前端按Status.0、Status.1等形式传参
+    Status: Optional[str] = None  # 安全组状态，用于筛选指定状态的安全组
 

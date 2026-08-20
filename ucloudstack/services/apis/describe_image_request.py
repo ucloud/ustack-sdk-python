@@ -14,7 +14,7 @@ class DescribeImageRequest:
 
     CompanyID: Optional[int] = None  # 租户唯一标识ID，标识用户所属的租户组织，用于实现多租户环境下的资源隔离和权限控制，系统根据此ID确定用户的资源访问范围
 
-    ImageFormat: Optional[str] = None  # 镜像格式，用于筛选镜像格式，取值qcow2、iso、vmdk、raw
+    ImageFormat: Optional[str] = None  # 镜像格式，用于筛选镜像格式，取值qcow2、iso
 
     ImageIDs: Optional[List[str]] = None  # 镜像ID列表，用于精确筛选指定镜像集合
 
@@ -27,6 +27,4 @@ class DescribeImageRequest:
     Offset: Optional[int] = None  # 起始偏移量，用于指定返回结果集的起始位置
 
     ProjectIDs: Optional[List[str]] = None  # 项目ID列表，用于筛选自定义镜像所属项目，基础镜像不生效
-
-    Status: Optional[List[str]] = None  # 状态列表，用于筛选指定状态的镜像资源
 

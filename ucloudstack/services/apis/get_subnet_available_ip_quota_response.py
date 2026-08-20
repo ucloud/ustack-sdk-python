@@ -12,4 +12,6 @@ class GetSubnetAvailableIPQuotaResponse:
     Action: str = ""
 
     AvailableCount: Optional[int] = None  # 主网段可用IP数量
+    ExpandAvailableCount: Optional[int] = None  # 扩展网段可用IP数量
+    ExpandUsedCount: Optional[int] = None  # 扩展网段已用IP数量
     UsedCount: Optional[int] = None  # 主网段已用IP数量

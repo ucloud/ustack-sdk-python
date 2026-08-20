@@ -34,5 +34,3 @@ class DescribeIsolationGroupsRequest:
 
     SetType: Optional[str] = None  # 计算集群类型，用于按类型筛选隔离组
 
-    Status: Optional[List[str]] = None  # 状态列表，过滤隔离组状态
-

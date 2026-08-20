@@ -19,8 +19,8 @@ class OPLogInfo:
     Message: Optional[str] = None  # 返回信息，API响应的描述信息
     OPLogID: Optional[int] = None  # 操作日志ID，系统生成的唯一标识
     ProductType: Optional[str] = None  # 产品类型，操作涉及的产品分类
-    Region: Optional[str] = None  # 地域ID；地域类操作返回具体地域标识，全局类或账号级日志可为空
-    RegionAlias: Optional[str] = None  # 地域别称；当 Region 非空时保证非空，优先返回地域显示名称，缺失时可回退为 Region 原值；当 Region 为空时该字段也为空
+    Region: Optional[str] = None  # 地域ID，操作发生的地域标识
+    RegionAlias: Optional[str] = None  # 地域别称，地域的显示名称
     ResourceID: Optional[str] = None  # 资源ID，操作涉及的资源唯一标识
     ResourcesAfter: Optional[List[OPLogResource]] = None  # 操作后关联资源快照，记录资源名称、类型和IP信息
     ResourcesBefore: Optional[List[OPLogResource]] = None  # 操作前关联资源快照，记录资源名称、类型和IP信息

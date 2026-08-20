@@ -18,7 +18,7 @@ class CreateDBSGatewayRequest:
 
     EIPID: Optional[str] = None  # 外网IPID，外网的IPID
 
-    ProjectID: Optional[str] = None  # 项目组ID，项目组的ID，未传时尝试分配默认项目
+    ProjectID: Optional[str] = None  # 项目组ID，项目组的ID
 
     Remark: Optional[str] = None  # 备注，DBS网关的描述信息，长度0-100字符，禁止http://或https://等非法字符
 

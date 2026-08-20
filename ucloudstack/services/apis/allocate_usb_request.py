@@ -16,5 +16,5 @@ class AllocateUSBRequest:
 
     USBDeviceID: str  # USB设备ID，指定要分配给租户的USB设备，设备必须处于未挂载且节点授权通过
 
-    ProjectID: Optional[str] = None  # 项目ID，USB设备分配后归属的项目，未传时尝试分配默认项目
+    ProjectID: Optional[str] = None  # 项目ID，USB设备分配后归属的项目
 

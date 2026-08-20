@@ -10,7 +10,7 @@ from typing import Optional, List, Any, Dict
 class RechargeRequest:
     """"""
 
-    Amount: float  # 充值金额，单位：元；现金充值取值范围：100.00-500000.00，内部赠金充值取值范围：100.00-10000000.00
+    Amount: float  # 充值金额，单位：元，取值范围：100.00-500000.00
 
     CompanyID: int  # 租户ID，指定要充值的租户唯一标识
 

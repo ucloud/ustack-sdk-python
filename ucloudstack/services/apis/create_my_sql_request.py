@@ -44,7 +44,7 @@ class CreateMySQLRequest:
 
     HighAvailability: Optional[str] = None  # MySQL数据库高可用类型，取值范围：Standalone（单机版，创建1个VM节点）、ActiveStandy（高可用版/双节点主备，创建2个VM节点），默认值：Standalone，业务限制：当BackupID不为空（从备份恢复）时，拒绝ActiveStandy，只能创建单机实例
 
-    ProjectID: Optional[str] = None  # 项目ID，用于实现资源的逻辑分组管理，未传时尝试分配默认项目
+    ProjectID: Optional[str] = None  # 项目ID，用于实现资源的逻辑分组管理
 
     Remark: Optional[str] = None  # 备注，用于说明和注释，长度为0-100个英文或中文字符，不能包含<script>、<a javascript:>等非法字符，用于XSS防护
 

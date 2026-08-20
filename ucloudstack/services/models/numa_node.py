@@ -12,5 +12,5 @@ class NUMANode:
 
     CPUs: Optional[List[NUMANodeCPU]] = None  # NUMA节点CPU列表，该NUMA节点包含的CPU核心详情
     NUMAID: Optional[int] = None  # NUMA节点ID，物理NUMA拓扑节点标识
-    TotalMemory: Optional[int] = None  # 物理NUMA内存
-    UsedMemory: Optional[int] = None  # 物理NUMA已被虚拟机使用的内存
+    TotalMemory: Optional[int] = None  # 物理NUMA内存，单位：MiB
+    UsedMemory: Optional[int] = None  # 物理NUMA已被虚拟机使用的内存，单位：MiB

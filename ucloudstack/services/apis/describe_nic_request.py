@@ -30,7 +30,7 @@ class DescribeNICRequest:
 
     SegmentID: Optional[str] = None  # 外网线路ID过滤，用于查询指定线路的外网网卡
 
-    Status: Optional[List[str]] = None  # 状态列表，查询指定状态的网卡
+    Status: Optional[str] = None  # 状态过滤，查询指定状态的网卡
 
     SubnetID: Optional[str] = None  # 子网ID过滤，用于查询指定子网下的网卡
 

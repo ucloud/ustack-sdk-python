@@ -10,17 +10,11 @@ from typing import Optional, List, Any, Dict
 class DescribeAlertRequest:
     """"""
 
-    AlertOccurrenceKeys: Optional[List[str]] = None  # 告警实例标识列表，按 AlertFingerprint:ActiveAtUnixNano 精确过滤具体当前告警实例；通常用于从其它页面携带行级上下文跳转当前告警
-
     CompanyID: Optional[int] = None  # 租户ID，按告警中的company_id标签过滤，仅当告警携带company_id标签时才会命中
-
-    Ignored: Optional[bool] = None  # 是否忽略，按当前是否处于忽略期过滤；不传表示不过滤，true 表示仅返回忽略中的告警，false 表示仅返回未忽略告警
 
     Limit: Optional[int] = None  # 分页大小，逻辑上会在合并所有地域的告警并按活跃时间倒序排列后再进行分页，Limit为0时默认10
 
     Offset: Optional[int] = None  # 分页偏移量，与Limit配合在合并后的告警列表中定位返回窗口
-
-    ProcessStatuses: Optional[List[str]] = None  # 人工处理状态列表，按告警处理状态过滤，取值：Open、Handled、Ignored；未有状态记录的当前告警视为Open；Ignored 匹配当前处于忽略期的告警
 
     ProjectIDs: Optional[List[str]] = None  # 项目ID列表，按project_id注解过滤自定义告警，告警未携带项目注解时不会返回
 
@@ -29,8 +23,6 @@ class DescribeAlertRequest:
     Severities: Optional[List[str]] = None  # 告警级别列表，按severity标签过滤，取值：warning/critical/error；告警缺少severity标签时在设置该条件时会被过滤掉
 
     States: Optional[List[str]] = None  # 告警状态列表，按Prometheus Alert的状态过滤，取值：inactive/pending/firing
-
-    TargetID: Optional[str] = None  # 目标资源ID，按target_id标签精确过滤某个具体资源的告警记录；告警缺少target_id标签时在设置该条件时不会命中
 
     TemplateTypes: Optional[List[str]] = None  # 告警模板类型列表，按resource_type标签过滤，可通过DescribeMetric获取常见取值；若告警缺少resource_type标签则不会命中
 

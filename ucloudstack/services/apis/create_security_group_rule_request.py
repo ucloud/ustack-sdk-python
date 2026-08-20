@@ -18,5 +18,5 @@ class CreateSecurityGroupRuleRequest:
 
     SGID: str  # 安全组ID，指定要添加规则的安全组唯一标识符；安全组需处于Available状态
 
-    ProjectID: Optional[str] = None  # 项目ID，规则所属项目分组标识，未传时尝试分配默认项目
+    ProjectID: Optional[str] = None  # 项目ID，规则所属项目分组标识
 

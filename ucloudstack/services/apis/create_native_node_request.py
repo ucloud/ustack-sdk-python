@@ -34,10 +34,6 @@ class CreateNativeNodeRequest:
 
     EIPID: Optional[str] = None  # 原生节点外网IP
 
-    GPU: Optional[int] = None  # GPU数量
-
-    GPUMdevName: Optional[str] = None  # GPU型号
-
     MaxPods: Optional[int] = None  # 原生节点pod数量
 
     Memory: Optional[int] = None  # 原生节点内存容量

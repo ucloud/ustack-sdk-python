@@ -16,8 +16,6 @@ class MigrateVMInstanceRequest:
 
     Region: str  # 地域ID，用于标识资源所属的地理区域
 
-    AutoConverge: Optional[bool] = None  # 是否自动收敛
-
     CompanyID: Optional[int] = None  # 租户唯一标识ID，标识用户所属的租户组织，用于实现多租户环境下的资源隔离和权限控制，系统根据此ID确定用户的资源访问范围
 
     HostIP: Optional[str] = None  # 物理机IP地址，用于标识源宿主机IP

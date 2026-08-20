@@ -24,5 +24,3 @@ class DescribeHostVMInstanceRequest:
 
     SetID: Optional[str] = None  # 计算集群ID，用于筛选指定集群上的虚拟机
 
-    VMIDs: Optional[List[str]] = None  # 虚拟机ID列表，用于精确筛选指定计算实例
-

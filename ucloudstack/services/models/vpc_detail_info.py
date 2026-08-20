@@ -14,6 +14,8 @@ class VPCDetailInfo:
     CompanyName: Optional[str] = None  # 租户名称，资源所属租户名称
     CreateTime: Optional[int] = None  # 创建时间，秒级Unix时间戳
     Email: Optional[str] = None  # 租户邮箱，资源所属租户的联系邮箱
+    ExpandNetwork: Optional[str] = None  # 扩展网段，VPC关联的IPv6地址范围
+    ExpandSubnetCount: Optional[int] = None  # 扩展子网数量，展示扩展网段下已划分的子网总数
     Name: Optional[str] = None  # VPC名称
     Network: Optional[str] = None  # 网段，VPC主网段的CIDR地址范围
     PeeringInfos: Optional[List[PeeringInfo]] = None  # 对等连接详情列表，包含与该VPC建立的所有对等连接及其状态

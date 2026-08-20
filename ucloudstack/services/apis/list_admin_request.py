@@ -14,5 +14,7 @@ class ListAdminRequest:
 
     Limit: Optional[int] = None  # 分页大小，控制单次返回数量
 
+    MemberIDs: Optional[List[int]] = None  # 管理员ID列表，用于精确筛选指定管理员，非必填
+
     Offset: Optional[int] = None  # 分页偏移量，用于分页起点，默认为0
 

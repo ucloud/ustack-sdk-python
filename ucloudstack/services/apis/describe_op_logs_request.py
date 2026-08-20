@@ -18,7 +18,7 @@ class DescribeOPLogsRequest:
 
     CompanyID: Optional[int] = None  # 租户ID，用于筛选指定租户的操作日志
 
-    IsSuccess: Optional[str] = None  # 是否成功，筛选成功或失败的操作日志；取值：1 表示成功，0 表示失败，空表示全部
+    IsSuccess: Optional[str] = None  # 是否成功，筛选成功或失败的操作日志；取值：Y表示成功，N表示失败，空表示全部
 
     Keyword: Optional[str] = None  # 关键词，用于按API名称、资源ID等字段检索
 

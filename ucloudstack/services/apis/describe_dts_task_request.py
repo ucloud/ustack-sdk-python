@@ -24,5 +24,3 @@ class DescribeDTSTaskRequest:
 
     ProjectIDs: Optional[List[str]] = None  # 项目ID列表，用于筛选指定项目下的DTS任务
 
-    Status: Optional[List[str]] = None  # 状态列表，按状态过滤DTS任务
-

@@ -33,17 +33,7 @@ class CreateVMInstanceRequest:
 
     Bandwidth: Optional[int] = None  # 外网带宽，指定外网IP的带宽上限，单位：Mbps，0表示不限制，仅在指定外网时有效
 
-    BootDevices: Optional[List[str]] = None  # 引导顺序，可选字段，支持：hd（硬盘），cdrom（光驱），network（网络）
-
-    BootDiskBus: Optional[str] = None  # 系统盘总线类型，取值 virtio，ide，scsi
-
-    BootDiskCacheMode: Optional[str] = None  # 系统盘磁盘缓存模式，当前生效的磁盘I/O缓存策略
-
-    BootDiskID: Optional[str] = None  # 系统盘ID，作为系统启动盘的已有云盘标识，与BootDiskSpace互斥
-
-    BootDiskReadBandwidth: Optional[int] = None  # 系统盘QoS限速读带宽，单位MB/s，0表示不限制
-
-    BootDiskReadIOPS: Optional[int] = None  # 系统盘QoS限速读IOPS，0表示不限制
+    BootDiskID: Optional[str] = None  # 系统盘ID，作为系统启动盘的已有云盘标识，与BootDiskSpace互斥，与ImageID互斥，两者必须指定其一
 
     BootDiskSecret: Optional[str] = None  # 启动盘加密密钥，用于加密系统盘的密钥信息，可选字段
 
@@ -51,33 +41,17 @@ class CreateVMInstanceRequest:
 
     BootDiskSpace: Optional[int] = None  # 系统盘容量，指定新建系统盘的大小，单位：GiB，仅在BootDiskID为空时有效，调整此值可扩容系统盘
 
-    BootDiskTotalBandwidth: Optional[int] = None  # 系统盘QoS限速总带宽，单位MB/s，0表示不限制
-
-    BootDiskTotalIOPS: Optional[int] = None  # 系统盘QoS限速总IOPS，0表示不限制
-
-    BootDiskWriteBandwidth: Optional[int] = None  # 系统盘QoS限速写带宽，单位MB/s，0表示不限制
-
-    BootDiskWriteIOPS: Optional[int] = None  # 系统盘QoS限速写IOPS，0表示不限制
-
     BootSourceType: Optional[str] = None  # 启动源类型，指定用于创建虚拟机的介质类型，取值：Image（镜像）、Disk（云盘）
 
     BootloaderType: Optional[str] = None  # 引导方式，指定虚拟机的系统引导模式，bios兼容性更好，uefi支持更大磁盘和安全启动
-
-    CDROMs: Optional[List[CreateVMInstanceRequestCDROM]] = None  # CDROM列表，指定需挂载的CDROM信息，最多支持3个CDROM
-
-    CPUCoresPerSocket: Optional[int] = None  # CPU每个插槽内核数，可选字段，默认等于CPU
-
-    CPUHypervisorDisable: Optional[bool] = None  # 虚拟机是否隐藏虚拟化 (hypervisor) 标记，可选字段，默认false
-
-    CPULimitPercent: Optional[int] = None  # CPU频率限制百分比，可选字段，默认100%
 
     CPUMode: Optional[str] = None  # CPU模式，指定虚拟机CPU的模拟方式，host-passthrough提供最优性能但可移植性差，custom提供更好的兼容性
 
     CPUModel: Optional[str] = None  # CPU型号，指定虚拟机的CPU处理器型号，需与所选计算集群兼容
 
-    CPUPriority: Optional[str] = None  # CPU优先级，取值：Normal，High （高），可选字段，默认Normal
-
     DNS: Optional[str] = None  # DNS配置，指定虚拟机的DNS服务器地址，多个服务器用逗号分隔
+
+    DataDiskAutoMount: Optional[bool] = None  # 自动挂载，标识是否自动挂载数据盘到系统默认路径
 
     DataDiskID: Optional[str] = None  # 数据盘ID，需挂载的已有数据盘标识，与DataDiskSpace互斥，可选字段
 
@@ -86,8 +60,6 @@ class CreateVMInstanceRequest:
     DataDiskSetType: Optional[str] = None  # 数据盘集群类型，指定新建数据盘所属的存储集群，仅在DataDiskID为空且DataDiskSpace>0时有效，租户必须有访问权限，可选字段
 
     DataDiskSpace: Optional[int] = None  # 数据盘容量，指定新建数据盘的大小，单位：GiB，当值为0时表示不创建数据盘，仅在DataDiskID为空时有效，与DataDiskID互斥
-
-    DataDisks: Optional[List[CreateVMInstanceRequestDataDisk]] = None  # DataDisk列表，指定需挂载的磁盘信息
 
     DiskCacheMode: Optional[str] = None  # 磁盘缓存模式，指定磁盘I/O的缓存策略，directsync最安全但性能最低，writeback性能最优但可靠性风险高，none折中方案
 
@@ -105,8 +77,6 @@ class CreateVMInstanceRequest:
 
     HighAvailability: Optional[str] = None  # 高可用模式，指定虚拟机的高可用策略，NeverStop启用自动重启，None禁用
 
-    HostID: Optional[str] = None  # 指定主机运行
-
     Hostname: Optional[str] = None  # 主机名称，虚拟机操作系统内部的主机名
 
     IGID: Optional[str] = None  # 隔离组ID，指定虚拟机所属的物理隔离组，用于提高虚拟机间的物理隔离，可选字段
@@ -115,9 +85,11 @@ class CreateVMInstanceRequest:
 
     ImageID: Optional[str] = None  # 镜像ID，作为启动源的基础镜像标识，与BootDiskID互斥，两者必须指定其一，镜像必须与计算集群架构匹配，租户必须有访问权限
 
-    InitialState: Optional[str] = None  # 电源策略，指定虚拟机创建完成后的电源状态，取值：Running，Stopped，可选字段，默认Running
+    InternalExpandIP: Optional[str] = None  # 内网扩展IP，指定额外的内网IP地址，仅支持IPv6地址，可选字段
 
     InternalIP: Optional[str] = None  # 内网IP，指定虚拟机在子网中的内网IP地址，若未指定则由系统自动分配
+
+    InternalIPVersion: Optional[str] = None  # 内网协议版本，指定内网IP的协议类型，IPv4传统网络，IPv6新一代网络，ALL双栈，可选字段
 
     InternetIP: Optional[str] = None  # 外网IP，指定虚拟机绑定的公网IP地址，若未指定则由系统自动分配
 
@@ -131,13 +103,11 @@ class CreateVMInstanceRequest:
 
     MdevName: Optional[str] = None  # vGPU规格，指定虚拟GPU的配置规格，仅在GPUType为VGPU时有效且必填，预留字段，暂未支持
 
-    NICs: Optional[List[CreateVMInstanceRequestNIC]] = None  # 网卡列表，指定需挂载的网卡信息
-
     OSDistribution: Optional[str] = None  # 操作系统发行版，标识操作系统的具体家族，ImageID为空时必填
 
     OSType: Optional[str] = None  # 操作系统类型，标识操作系统的核心分类，ImageID为空时必填
 
-    OSVersion: Optional[str] = None  # 操作系统版本，标识发行版内部的具体版本信息
+    OSVersion: Optional[str] = None  # 操作系统版本，标识发行版内部的具体版本信息，ImageID为空时必填
 
     OperatorName: Optional[str] = None  # 线路ID，虚拟机绑定的外网线路资源标识，与FlatNetworkID互斥，用于WAN网络的外网IP绑定，在VPC模式下，若Bandwidth>0则必填
 
@@ -145,7 +115,7 @@ class CreateVMInstanceRequest:
 
     Password: Optional[str] = None  # 登录密码，虚拟机的初始系统管理员密码，仅当所选镜像支持QGA或Cloud-Init时有效，密码强度规则由RegionConfigKeyVMPasswordLength与RegionConfigKeyVMPasswordComplexity配置决定
 
-    ProjectID: Optional[str] = None  # 项目ID，用于实现资源的逻辑分组管理，未传时尝试分配默认项目
+    ProjectID: Optional[str] = None  # 项目ID，用于实现资源的逻辑分组管理
 
     Remark: Optional[str] = None  # 备注信息，对虚拟机资源的补充说明，长度0-100个字符，禁止包含<script>标签或javascript链接
 
@@ -163,7 +133,7 @@ class CreateVMInstanceRequest:
 
     USBDeviceID: Optional[str] = None  # USB设备ID，需挂载到虚拟机的USB设备标识
 
-    UserData: Optional[str] = None  # Cloud-Init脚本，虚拟机启动时的自定义初始化配置脚本，仅当镜像支持Cloud-Init时有效，YAML或Shell格式，需 base64 编码后传入，可选字段
+    UserData: Optional[str] = None  # Cloud-Init脚本，虚拟机启动时的自定义初始化配置脚本，仅当镜像支持Cloud-Init时有效，YAML或Shell格式，可选字段
 
     VCPUBindingDegrandable: Optional[bool] = None  # 降级允许，标识vCPU绑定在迁移时是否允许降级为非绑定模式，提高迁移成功率但可能降低性能
 

@@ -40,7 +40,7 @@ class CreateLBRequest:
 
     HighAvailability: Optional[str] = None  # 高可用模式，指定负载均衡部署架构；取值ActiveStandy（双活高可用）、Standalone（单机模式）
 
-    ProjectID: Optional[str] = None  # 项目ID，负载均衡所属项目分组标识，未传时尝试分配默认项目
+    ProjectID: Optional[str] = None  # 项目ID，负载均衡所属项目分组标识
 
     Remark: Optional[str] = None  # 备注信息，长度0-100字符，禁止http://或https://等非法字符
 

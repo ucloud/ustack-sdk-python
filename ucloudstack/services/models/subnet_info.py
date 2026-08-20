@@ -11,6 +11,7 @@ class SubnetInfo:
     """"""
 
     CreateTime: Optional[int] = None  # 创建时间，秒级Unix时间戳
+    ExpandNetwork: Optional[str] = None  # 扩展网段，子网关联的IPv6地址范围
     IPVersion: Optional[str] = None  # IP版本，标识子网支持的地址协议版本
     Name: Optional[str] = None  # 子网名称
     Network: Optional[str] = None  # 网段，子网使用的CIDR地址范围

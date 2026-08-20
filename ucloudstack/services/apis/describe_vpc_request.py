@@ -24,7 +24,5 @@ class DescribeVPCRequest:
 
     ProjectIDs: Optional[List[str]] = None  # 项目ID列表，用于按项目维度筛选资源
 
-    Status: Optional[List[str]] = None  # VPC状态列表，用于按多个状态过滤VPC，支持前端按Status.0、Status.1等形式传参
-
     VPCIDs: Optional[List[str]] = None  # VPCID列表，用于查询指定的虚拟私有网络
 

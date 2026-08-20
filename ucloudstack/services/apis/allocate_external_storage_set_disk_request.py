@@ -16,7 +16,7 @@ class AllocateExternalStorageSetDiskRequest:
 
     CompanyID: Optional[int] = None  # 租户ID，资源所属租户的权限上下文
 
-    ProjectID: Optional[str] = None  # 项目ID，资源分配到目标租户后的项目归属，未传时尝试分配默认项目
+    ProjectID: Optional[str] = None  # 项目ID，资源分配到目标租户后的项目归属
 
     TargetCompanyID: Optional[int] = None  # 目标租户ID，指定资源分配后的归属租户
 

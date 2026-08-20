@@ -18,7 +18,7 @@ class CreateIPGroupRequest:
 
     CompanyID: Optional[int] = None  # 租户ID，标识IP组所属的租户组织，用于多租户资源隔离与权限控制
 
-    ProjectID: Optional[str] = None  # 项目ID，IP组所属项目分组标识，未传时尝试分配默认项目
+    ProjectID: Optional[str] = None  # 项目ID，IP组所属项目分组标识
 
     Remark: Optional[str] = None  # 备注，用于说明和注释，长度0-100字符，禁止http://或https://等非法字符
 
