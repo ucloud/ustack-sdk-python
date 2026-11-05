@@ -15,6 +15,7 @@ class Compute:
     CPULocked: Optional[int] = None  # CPU锁定量，已锁定CPU数量
     CPUType: Optional[str] = None  # CPU类型，用于标识类型
     CPUUsed: Optional[int] = None  # CPU已用，已分配CPU核心数
+    CPUVCPUBinding: Optional[int] = None  # vCPU绑定CPU量，vCPU绑定节点预留的CPU核心数
     GPUAllocable: Optional[int] = None  # GPU可分配，剩余可分配GPU数量
     GPUCount: Optional[int] = None  # GPU数量，GPU总数
     GPUInfos: Optional[List[HostGPUUsedInfo]] = None  # GPU详情，物理GPU使用详情
@@ -27,6 +28,7 @@ class Compute:
     MemoryPhysicUsed: Optional[float] = None  # 物理内存已用，系统占用内存容量
     MemoryReserved: Optional[float] = None  # 内存预留量，系统预留内存容量
     MemoryUsed: Optional[float] = None  # 内存已用，已分配内存容量
+    MemoryVCPUBinding: Optional[float] = None  # vCPU绑定内存量，vCPU绑定节点预留的内存容量，单位为GB
     ResourceCount: Optional[int] = None  # 资源总数，节点资源总数
     SetID: Optional[str] = None  # 集群ID，用于标识集群
     SetType: Optional[str] = None  # 集群类型，用于标识类型

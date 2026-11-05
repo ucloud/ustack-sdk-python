@@ -75,6 +75,7 @@ from .drs import DRS
 from .drs_rule_vm_info import DRSRuleVMInfo
 from .dts_precheck_item import DTSPrecheckItem
 from .dts_price_info import DTSPriceInfo
+from .dts_service_restart_policy import DTSServiceRestartPolicy
 from .dts_task_info import DTSTaskInfo
 from .data_check_task_overview import DataCheckTaskOverview
 from .dimension import Dimension
@@ -425,6 +426,7 @@ __all__ = [
     'DRSRuleVMInfo',
     'DTSPrecheckItem',
     'DTSPriceInfo',
+    'DTSServiceRestartPolicy',
     'DTSTaskInfo',
     'DataCheckTaskOverview',
     'Dimension',

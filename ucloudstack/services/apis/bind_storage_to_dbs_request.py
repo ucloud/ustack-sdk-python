@@ -20,7 +20,7 @@ class BindStorageToDBSRequest:
 
     AccessKey: Optional[str] = None  # 外部服务访问密钥，当StorageType为S3时必填
 
-    BucketName: Optional[str] = None  # 外部服务存储桶名称，当StorageType为S3时可选，空值默认dbs
+    BucketName: Optional[str] = None  # 外部服务存储桶名称，当StorageType为S3时必填
 
     Endpoint: Optional[str] = None  # 外部服务地址，当StorageType为S3时必填
 

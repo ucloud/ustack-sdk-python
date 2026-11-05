@@ -59,6 +59,8 @@ class CloneVMInstanceRequest:
 
     OperatorName: Optional[str] = None  # 外网线路ID，指定外网宽带运营商线路
 
+    PFCode: Optional[str] = None  # 网卡型号，指定物理网卡的硬件型号编码，支持SR-IOV加速，仅适用于扁平网络，与内网带宽限速互斥
+
     ProjectID: Optional[str] = None  # 项目ID，资源所属的项目分组标识
 
     Remark: Optional[str] = None  # 备注信息，对新虚拟机的补充说明，长度0-100个字符，禁止包含<script>标签或javascript链接

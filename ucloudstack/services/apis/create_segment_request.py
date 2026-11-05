@@ -18,8 +18,6 @@ class CreateSegmentRequest:
 
     Segment: str  # 外网网段，指定外网线路的网络地址范围，必须为CIDR格式，支持IPv4和IPv6
 
-    TagKeyValuePairs: List[str]  # 标签键值对，用于资源标记和分类管理，格式为key:value的字符串，传入Base64编码的字符串
-
     DHCPServerIP: Optional[str] = None  # DHCP服务器IP地址，必须在指定的网段内，传值表示启用DHCP，传空表示禁用DHCP
 
     EnableDHCP: Optional[bool] = None  # 是否启用DHCP服务，用于为虚拟机自动分配IP地址
@@ -31,6 +29,8 @@ class CreateSegmentRequest:
     PermissionMode: Optional[str] = None  # 权限模式，控制租户访问权限的模式，可选值：all（所有租户可用，默认值）、whitelist（白名单，仅指定租户可用）、blacklist（黑名单，仅指定租户不可用）
 
     Remark: Optional[str] = None  # 备注，用于进行说明和注释，长度为0-100个英文或中文字符，不能使用http://或https://等非法字符
+
+    TagKeyValuePairs: Optional[List[str]] = None  # 标签键值对，用于资源标记和分类管理，格式为key:value的字符串，传入Base64编码的字符串
 
     Vlan: Optional[str] = None  # VLAN ID，虚拟局域网标识，可选，取值范围1-4094，不传或传0表示不设置VLAN
 

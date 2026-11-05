@@ -22,6 +22,8 @@ class RunDTSPrecheckRequest:
 
     TaskMode: str  # 任务类型，指定数据传输的同步模式，取值范围：full（全量迁移）、incremental（增量同步）、full+incremental（全量加增量）
 
+    DTSID: Optional[str] = None  # DTS任务ID，已有DTS任务预检查时用于在对应DTS虚拟机内执行命令；新建任务预检查时无需传入
+
     Databases: Optional[str] = None  # 同步数据库列表，指定需要同步的数据库名称，多个数据库用逗号分隔；不指定则同步所有数据库
 
     DestinationEndpointBinlogGTID: Optional[str] = None  # 目标库GTID集合，用于双向同步场景，指定目标库的GTID起始位置，可通过show master status获取，用于反向增量同步
@@ -36,9 +38,9 @@ class RunDTSPrecheckRequest:
 
     DestinationEndpointUserName: Optional[str] = None  # 目标实例用户名，当DestinationEngine为MYSQL时必填，用于连接目标数据库的账号用户名
 
-    IgnoreDatabases: Optional[str] = None  # 忽略数据库列表，指定需要排除的数据库名称，多个数据库用逗号分隔，与Databases互斥使用
+    IgnoreDatabases: Optional[str] = None  # 忽略数据库列表，指定需要排除的数据库名称，多个数据库用逗号分隔，命中即不同步，优先级高于同步配置
 
-    IgnoreTables: Optional[str] = None  # 忽略数据表列表，指定需要排除的数据表，支持通配符，格式为database.table，多个表用逗号分隔，与Tables互斥使用
+    IgnoreTables: Optional[str] = None  # 忽略数据表列表，指定需要排除的数据表，支持通配符，格式为database.table，多个表用逗号分隔，命中即不同步，优先级高于同步配置
 
     SourceEndpointBinlogGTID: Optional[str] = None  # binlog GTID集合，用于MYSQL增量或全量加增量同步时基于GTID模式同步，可通过show master status获取，全量加增量任务会自动设置
 
