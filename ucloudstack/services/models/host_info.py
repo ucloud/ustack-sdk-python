@@ -14,6 +14,7 @@ class HostInfo:
     CPUCount: Optional[int] = None  # CPU总数，物理CPU核心总数
     CPUType: Optional[str] = None  # CPU类型，处理器型号信息
     CPUUsed: Optional[int] = None  # 已用CPU，已分配的CPU核心数
+    CPUVCPUBinding: Optional[int] = None  # vCPU绑定CPU余量，启用vCPU绑定的物理机剩余可分配CPU核心数
     CreateTime: Optional[int] = None  # 创建时间，资源创建的秒级Unix时间戳
     GPUAllocable: Optional[int] = None  # 可用GPU，剩余可分配的GPU数量
     GPUCount: Optional[int] = None  # GPU总量，物理GPU设备总数
@@ -29,6 +30,7 @@ class HostInfo:
     MemoryPhysicUsed: Optional[int] = None  # 系统内存，物理机自身使用的内存，单位GiB
     MemoryReserved: Optional[int] = None  # 预留内存，系统预留的内存，单位GiB
     MemoryUsed: Optional[int] = None  # 已用内存，已分配的内存容量，单位GiB
+    MemoryVCPUBinding: Optional[float] = None  # vCPU绑定内存余量，启用vCPU绑定的物理机剩余可分配内存，单位GiB
     NumaNodes: Optional[int] = None  # NUMA节点数，物理机的NUMA节点数量
     Region: Optional[str] = None  # 地域ID，资源所属的地理标识
     ResourceCount: Optional[int] = None  # 资源数量，运行的实例（如VM）数量

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Optional, List, Any, Dict
+from ucloudstack.services.models import *
 
 
 @dataclass
@@ -40,6 +41,8 @@ class CreateDTSTaskRequest:
 
     TaskMode: str  # 任务类型，指定数据传输的同步模式，取值范围：full（全量迁移）、incremental（增量同步）、full+incremental（全量加增量）
 
+    BatchSize: Optional[int] = None  # 单批写入大小，用于控制 sinker 每次批量写入的记录数；为0时使用系统默认值1000
+
     DataMarkTable: Optional[str] = None  # 数据标记表，用于双向同步场景记录已同步数据，格式为database.table_name，若不指定则同步服务自动创建，需确保数据库账户有创建表权限
 
     Databases: Optional[str] = None  # 同步数据库列表，指定需要同步的数据库名称，多个数据库用逗号分隔；不指定则默认同步所有数据库
@@ -62,9 +65,11 @@ class CreateDTSTaskRequest:
 
     HeartbeatTable: Optional[str] = None  # 心跳表名称，用于增量或双向同步场景定时推进binlog位点，格式为database.table_name，若不指定则同步服务自动创建，需确保数据库账户有创建表权限
 
-    IgnoreDatabases: Optional[str] = None  # 忽略数据库列表，指定需要排除的数据库名称，多个数据库用逗号分隔，与Databases互斥使用
+    IgnoreDatabases: Optional[str] = None  # 忽略数据库列表，指定需要排除的数据库名称，多个数据库用逗号分隔，命中即不同步，优先级高于同步配置
 
-    IgnoreTables: Optional[str] = None  # 忽略数据表列表，指定需要排除的数据表，支持通配符，格式为database.table，多个表用逗号分隔，与Tables互斥使用
+    IgnoreTables: Optional[str] = None  # 忽略数据表列表，指定需要排除的数据表，支持通配符，格式为database.table，多个表用逗号分隔，命中即不同步，优先级高于同步配置
+
+    IncrementalRestart: Optional[DTSServiceRestartPolicy] = None  # 增量同步阶段的 DTS 自恢复策略；不传表示沿用 DTS 默认自恢复策略，显式 Enabled=false 表示关闭 DTS 自恢复
 
     ProjectID: Optional[str] = None  # 项目ID，用于标识资源所属项目分组
 

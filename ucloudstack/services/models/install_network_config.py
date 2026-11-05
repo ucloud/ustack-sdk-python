@@ -15,3 +15,4 @@ class InstallNetworkConfig:
     Physicals: Optional[InstallPhysicalConfig] = None  # 物理网卡配置列表
     Type: Optional[str] = None  # 网络类型
     VLAN: Optional[InstallVLANConfig] = None  # VLAN配置
+    VlanMode: Optional[str] = None  # 交换机端口模式，来自该网卡最近一次装机时选择的值；access表示交换机端口为Access模式，trunk或空表示Trunk模式
