@@ -649,8 +649,6 @@ from ucloudstack.services.apis.describe_platform_storage_disk_request import *
 from ucloudstack.services.apis.describe_platform_storage_disk_response import *
 from ucloudstack.services.apis.describe_platform_storage_request import *
 from ucloudstack.services.apis.describe_platform_storage_response import *
-from ucloudstack.services.apis.describe_pmaurl_request import *
-from ucloudstack.services.apis.describe_pmaurl_response import *
 from ucloudstack.services.apis.describe_port_group_request import *
 from ucloudstack.services.apis.describe_port_group_response import *
 from ucloudstack.services.apis.describe_price_request import *
@@ -753,6 +751,8 @@ from ucloudstack.services.apis.describe_vm_host_request import *
 from ucloudstack.services.apis.describe_vm_host_response import *
 from ucloudstack.services.apis.describe_vm_instance_request import *
 from ucloudstack.services.apis.describe_vm_instance_response import *
+from ucloudstack.services.apis.describe_vm_migration_event_request import *
+from ucloudstack.services.apis.describe_vm_migration_event_response import *
 from ucloudstack.services.apis.describe_vm_set_request import *
 from ucloudstack.services.apis.describe_vm_set_response import *
 from ucloudstack.services.apis.describe_vm_type_request import *
@@ -843,6 +843,8 @@ from ucloudstack.services.apis.generate_vm_ware_console_ticket_request import *
 from ucloudstack.services.apis.generate_vm_ware_console_ticket_response import *
 from ucloudstack.services.apis.get_bmc_type_request import *
 from ucloudstack.services.apis.get_bmc_type_response import *
+from ucloudstack.services.apis.get_cluster_control_plane_spec_price_request import *
+from ucloudstack.services.apis.get_cluster_control_plane_spec_price_response import *
 from ucloudstack.services.apis.get_cluster_payment_of_premium_request import *
 from ucloudstack.services.apis.get_cluster_payment_of_premium_response import *
 from ucloudstack.services.apis.get_cluster_price_request import *
@@ -903,6 +905,8 @@ from ucloudstack.services.apis.get_natgw_price_request import *
 from ucloudstack.services.apis.get_natgw_price_response import *
 from ucloudstack.services.apis.get_native_node_price_request import *
 from ucloudstack.services.apis.get_native_node_price_response import *
+from ucloudstack.services.apis.get_native_node_resize_price_request import *
+from ucloudstack.services.apis.get_native_node_resize_price_response import *
 from ucloudstack.services.apis.get_node_cpu_governor_request import *
 from ucloudstack.services.apis.get_node_cpu_governor_response import *
 from ucloudstack.services.apis.get_on_site_inspection_request import *
@@ -1221,6 +1225,8 @@ from ucloudstack.services.apis.update_bucket_versioning_request import *
 from ucloudstack.services.apis.update_bucket_versioning_response import *
 from ucloudstack.services.apis.update_cluster_capacity_request import *
 from ucloudstack.services.apis.update_cluster_capacity_response import *
+from ucloudstack.services.apis.update_cluster_control_plane_spec_request import *
+from ucloudstack.services.apis.update_cluster_control_plane_spec_response import *
 from ucloudstack.services.apis.update_cluster_request import *
 from ucloudstack.services.apis.update_cluster_response import *
 from ucloudstack.services.apis.update_company_email_request import *
@@ -1299,8 +1305,12 @@ from ucloudstack.services.apis.update_natgw_policy_request import *
 from ucloudstack.services.apis.update_natgw_policy_response import *
 from ucloudstack.services.apis.update_natgw_rule_request import *
 from ucloudstack.services.apis.update_natgw_rule_response import *
+from ucloudstack.services.apis.update_native_node_dns_request import *
+from ucloudstack.services.apis.update_native_node_dns_response import *
 from ucloudstack.services.apis.update_native_node_instance_status_request import *
 from ucloudstack.services.apis.update_native_node_instance_status_response import *
+from ucloudstack.services.apis.update_native_node_resources_request import *
+from ucloudstack.services.apis.update_native_node_resources_response import *
 from ucloudstack.services.apis.update_native_node_wan_request import *
 from ucloudstack.services.apis.update_native_node_wan_response import *
 from ucloudstack.services.apis.update_nic_traffic_shaping_request import *
@@ -2884,6 +2894,12 @@ class UCloudStackClient(CoreClient):
         resp = self.invoke("DescribeResourceEvent", d, **kwargs)
         return resp
 
+    def describe_vm_migration_event(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
+        """获取虚拟机迁移事件列表"""
+        d = self._to_plain(req)
+        resp = self.invoke("DescribeVMMigrationEvent", d, **kwargs)
+        return resp
+
     def get_on_site_inspection(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
         """获取巡检报告详情"""
         d = self._to_plain(req)
@@ -3118,6 +3134,12 @@ class UCloudStackClient(CoreClient):
         resp = self.invoke("ForwardCluster", d, **kwargs)
         return resp
 
+    def get_cluster_control_plane_spec_price(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
+        """获取K8S集群控制面规格升档差价"""
+        d = self._to_plain(req)
+        resp = self.invoke("GetClusterControlPlaneSpecPrice", d, **kwargs)
+        return resp
+
     def get_cluster_payment_of_premium(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
         """获取K8S修改配置后的差价"""
         d = self._to_plain(req)
@@ -3142,6 +3164,12 @@ class UCloudStackClient(CoreClient):
         resp = self.invoke("GetNativeNodePrice", d, **kwargs)
         return resp
 
+    def get_native_node_resize_price(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
+        """获取K8S原生节点升配差价"""
+        d = self._to_plain(req)
+        resp = self.invoke("GetNativeNodeResizePrice", d, **kwargs)
+        return resp
+
     def update_cluster(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
         """更新k8s集群"""
         d = self._to_plain(req)
@@ -3154,10 +3182,28 @@ class UCloudStackClient(CoreClient):
         resp = self.invoke("UpdateClusterCapacity", d, **kwargs)
         return resp
 
+    def update_cluster_control_plane_spec(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
+        """升级k8s集群控制面规格档位（只支持升级，不支持降级）"""
+        d = self._to_plain(req)
+        resp = self.invoke("UpdateClusterControlPlaneSpec", d, **kwargs)
+        return resp
+
+    def update_native_node_dns(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
+        """更新k8s集群NativeNode默认DNS"""
+        d = self._to_plain(req)
+        resp = self.invoke("UpdateNativeNodeDNS", d, **kwargs)
+        return resp
+
     def update_native_node_instance_status(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
         """更新k8s集群NativeNode实例状态"""
         d = self._to_plain(req)
         resp = self.invoke("UpdateNativeNodeInstanceStatus", d, **kwargs)
+        return resp
+
+    def update_native_node_resources(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
+        """更新k8s集群NativeNode规格（在线升配，只支持扩容）"""
+        d = self._to_plain(req)
+        resp = self.invoke("UpdateNativeNodeResources", d, **kwargs)
         return resp
 
     def update_native_node_wan(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
@@ -3560,12 +3606,6 @@ class UCloudStackClient(CoreClient):
         """查询 MySQL 慢日志记录"""
         d = self._to_plain(req)
         resp = self.invoke("DescribeMySQLSlowLogRecords", d, **kwargs)
-        return resp
-
-    def describe_pma_url(self, req: typing.Optional[dict] = None, **kwargs) -> dict:
-        """获取 PMA URL"""
-        d = self._to_plain(req)
-        resp = self.invoke("DescribePMAURL", d, **kwargs)
         return resp
 
     def downgrade_my_sql(self, req: typing.Optional[dict] = None, **kwargs) -> dict:

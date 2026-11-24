@@ -21,6 +21,7 @@ class ClusterInfo:
     CompanyName: Optional[str] = None  # 租户名称
     ComputeclassAlias: Optional[str] = None  # 计算集群别名
     ComputeclassType: Optional[str] = None  # 计算集群类型
+    ControlPlaneSpec: Optional[str] = None  # 控制面规格档位，存量集群与空值统一返回 1x
     ControllerPlaneStatus: Optional[ControllerPlaneStatus] = None  # 集群控制面状态
     CreateTime: Optional[int] = None  # 创建时间
     Email: Optional[str] = None  # 租户邮箱

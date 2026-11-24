@@ -637,8 +637,6 @@ from .describe_orch_task_type_request import DescribeOrchTaskTypeRequest
 from .describe_orch_task_type_response import DescribeOrchTaskTypeResponse
 from .describe_order_request import DescribeOrderRequest
 from .describe_order_response import DescribeOrderResponse
-from .describe_pmaurl_request import DescribePMAURLRequest
-from .describe_pmaurl_response import DescribePMAURLResponse
 from .describe_paa_s_instance_request import DescribePaaSInstanceRequest
 from .describe_paa_s_instance_response import DescribePaaSInstanceResponse
 from .describe_parameters_histories_request import DescribeParametersHistoriesRequest
@@ -755,6 +753,8 @@ from .describe_vmiso_request import DescribeVMISORequest
 from .describe_vmiso_response import DescribeVMISOResponse
 from .describe_vm_instance_request import DescribeVMInstanceRequest
 from .describe_vm_instance_response import DescribeVMInstanceResponse
+from .describe_vm_migration_event_request import DescribeVMMigrationEventRequest
+from .describe_vm_migration_event_response import DescribeVMMigrationEventResponse
 from .describe_vm_set_request import DescribeVMSetRequest
 from .describe_vm_set_response import DescribeVMSetResponse
 from .describe_vm_type_request import DescribeVMTypeRequest
@@ -839,6 +839,8 @@ from .generate_vm_ware_console_ticket_request import GenerateVMWareConsoleTicket
 from .generate_vm_ware_console_ticket_response import GenerateVMWareConsoleTicketResponse
 from .get_bmc_type_request import GetBMCTypeRequest
 from .get_bmc_type_response import GetBMCTypeResponse
+from .get_cluster_control_plane_spec_price_request import GetClusterControlPlaneSpecPriceRequest
+from .get_cluster_control_plane_spec_price_response import GetClusterControlPlaneSpecPriceResponse
 from .get_cluster_payment_of_premium_request import GetClusterPaymentOfPremiumRequest
 from .get_cluster_payment_of_premium_response import GetClusterPaymentOfPremiumResponse
 from .get_cluster_price_request import GetClusterPriceRequest
@@ -899,6 +901,8 @@ from .get_natgw_price_request import GetNATGWPriceRequest
 from .get_natgw_price_response import GetNATGWPriceResponse
 from .get_native_node_price_request import GetNativeNodePriceRequest
 from .get_native_node_price_response import GetNativeNodePriceResponse
+from .get_native_node_resize_price_request import GetNativeNodeResizePriceRequest
+from .get_native_node_resize_price_response import GetNativeNodeResizePriceResponse
 from .get_node_cpu_governor_request import GetNodeCPUGovernorRequest
 from .get_node_cpu_governor_response import GetNodeCPUGovernorResponse
 from .get_os_media_v2_request import GetOSMediaV2Request
@@ -1217,6 +1221,8 @@ from .update_bucket_versioning_request import UpdateBucketVersioningRequest
 from .update_bucket_versioning_response import UpdateBucketVersioningResponse
 from .update_cluster_capacity_request import UpdateClusterCapacityRequest
 from .update_cluster_capacity_response import UpdateClusterCapacityResponse
+from .update_cluster_control_plane_spec_request import UpdateClusterControlPlaneSpecRequest
+from .update_cluster_control_plane_spec_response import UpdateClusterControlPlaneSpecResponse
 from .update_cluster_request import UpdateClusterRequest
 from .update_cluster_response import UpdateClusterResponse
 from .update_company_email_request import UpdateCompanyEmailRequest
@@ -1303,8 +1309,12 @@ from .update_nicpf_request import UpdateNICPFRequest
 from .update_nicpf_response import UpdateNICPFResponse
 from .update_nic_traffic_shaping_request import UpdateNICTrafficShapingRequest
 from .update_nic_traffic_shaping_response import UpdateNICTrafficShapingResponse
+from .update_native_node_dns_request import UpdateNativeNodeDNSRequest
+from .update_native_node_dns_response import UpdateNativeNodeDNSResponse
 from .update_native_node_instance_status_request import UpdateNativeNodeInstanceStatusRequest
 from .update_native_node_instance_status_response import UpdateNativeNodeInstanceStatusResponse
+from .update_native_node_resources_request import UpdateNativeNodeResourcesRequest
+from .update_native_node_resources_response import UpdateNativeNodeResourcesResponse
 from .update_native_node_wan_request import UpdateNativeNodeWANRequest
 from .update_native_node_wan_response import UpdateNativeNodeWANResponse
 from .update_node_cpu_governor_request import UpdateNodeCPUGovernorRequest
@@ -2069,8 +2079,6 @@ __all__ = [
     'DescribeOrchTaskTypeResponse',
     'DescribeOrderRequest',
     'DescribeOrderResponse',
-    'DescribePMAURLRequest',
-    'DescribePMAURLResponse',
     'DescribePaaSInstanceRequest',
     'DescribePaaSInstanceResponse',
     'DescribeParametersHistoriesRequest',
@@ -2187,6 +2195,8 @@ __all__ = [
     'DescribeVMISOResponse',
     'DescribeVMInstanceRequest',
     'DescribeVMInstanceResponse',
+    'DescribeVMMigrationEventRequest',
+    'DescribeVMMigrationEventResponse',
     'DescribeVMSetRequest',
     'DescribeVMSetResponse',
     'DescribeVMTypeRequest',
@@ -2271,6 +2281,8 @@ __all__ = [
     'GenerateVMWareConsoleTicketResponse',
     'GetBMCTypeRequest',
     'GetBMCTypeResponse',
+    'GetClusterControlPlaneSpecPriceRequest',
+    'GetClusterControlPlaneSpecPriceResponse',
     'GetClusterPaymentOfPremiumRequest',
     'GetClusterPaymentOfPremiumResponse',
     'GetClusterPriceRequest',
@@ -2331,6 +2343,8 @@ __all__ = [
     'GetNATGWPriceResponse',
     'GetNativeNodePriceRequest',
     'GetNativeNodePriceResponse',
+    'GetNativeNodeResizePriceRequest',
+    'GetNativeNodeResizePriceResponse',
     'GetNodeCPUGovernorRequest',
     'GetNodeCPUGovernorResponse',
     'GetOSMediaV2Request',
@@ -2649,6 +2663,8 @@ __all__ = [
     'UpdateBucketVersioningResponse',
     'UpdateClusterCapacityRequest',
     'UpdateClusterCapacityResponse',
+    'UpdateClusterControlPlaneSpecRequest',
+    'UpdateClusterControlPlaneSpecResponse',
     'UpdateClusterRequest',
     'UpdateClusterResponse',
     'UpdateCompanyEmailRequest',
@@ -2735,8 +2751,12 @@ __all__ = [
     'UpdateNICPFResponse',
     'UpdateNICTrafficShapingRequest',
     'UpdateNICTrafficShapingResponse',
+    'UpdateNativeNodeDNSRequest',
+    'UpdateNativeNodeDNSResponse',
     'UpdateNativeNodeInstanceStatusRequest',
     'UpdateNativeNodeInstanceStatusResponse',
+    'UpdateNativeNodeResourcesRequest',
+    'UpdateNativeNodeResourcesResponse',
     'UpdateNativeNodeWANRequest',
     'UpdateNativeNodeWANResponse',
     'UpdateNodeCPUGovernorRequest',

@@ -14,3 +14,4 @@ class ListInstallProfilesResponse:
 
     Infos: Optional[List[InstallProfileInfo]] = None  # 模板列表
     TotalCount: Optional[int] = None  # 总数
+    Truncated: Optional[bool] = None  # 结果是否因扫描上限被截断；为 true 时 TotalCount 不是完整总数，调用方应缩小查询范围

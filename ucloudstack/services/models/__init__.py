@@ -323,6 +323,7 @@ from .vgpu_split_type_info import VGPUSplitTypeInfo
 from .vip_info import VIPInfo
 from .vmc_info import VMCInfo
 from .vm_info import VMInfo
+from .vm_migration_event_info import VMMigrationEventInfo
 from .vm_migration_info import VMMigrationInfo
 from .vm_migration_report import VMMigrationReport
 from .vm_numa_info import VMNumaInfo
@@ -674,6 +675,7 @@ __all__ = [
     'VIPInfo',
     'VMCInfo',
     'VMInfo',
+    'VMMigrationEventInfo',
     'VMMigrationInfo',
     'VMMigrationReport',
     'VMNumaInfo',

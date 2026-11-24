@@ -28,6 +28,8 @@ class CreateNativeNodeRequest:
 
     CompanyID: Optional[int] = None  # 租户ID
 
+    DNS: Optional[str] = None  # 默认DNS，none 表示不设置，或逗号分隔的 IP 列表；为空时按地域全局配置补齐
+
     DataDiskSetType: Optional[str] = None  # 数据盘集群ID
 
     DataDiskSpace: Optional[int] = None  # 数据盘大小

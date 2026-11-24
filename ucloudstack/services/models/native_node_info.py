@@ -21,6 +21,7 @@ class NativeNodeInfo:
     ComputeclassAlias: Optional[str] = None  # 计算集群别名
     ComputeclassID: Optional[str] = None  # 计算集群ID
     ComputeclassType: Optional[str] = None  # 计算集群类型
+    DNS: Optional[str] = None  # 默认DNS，none 表示不设置；为空表示未配置，由 HH 回落到系统默认
     EIP: Optional[str] = None  # 弹性IP
     EIPID: Optional[str] = None  # 
     EIPName: Optional[str] = None  # 弹性IP名称
@@ -31,6 +32,11 @@ class NativeNodeInfo:
     NodeName: Optional[str] = None  # 节点名称
     NodeStatus: Optional[str] = None  # 节点状态
     OSType: Optional[str] = None  # 系统类型
+    ResizeCPUBlockedReason: Optional[str] = None  # 不能在线升配 CPU 的原因：空表示可以；NotReserved 表示节点虚拟机未预留 CPU 热插容量；Unsupported 表示该节点架构暂不支持；ArmUnsupported 表示 arm 节点暂不支持，需新建节点
+    ResizeFailReason: Optional[str] = None  # ResizeStatus 为 Failed 时的失败原因码，如 CPUExceedsMax
+    ResizeMaxCPU: Optional[int] = None  # 在线升配 CPU 的上限（含）；为 0 且 ResizeCPUBlockedReason 为空表示未知（节点所在 kubelet 尚未上报）
+    ResizeMessage: Optional[str] = None  # ResizeStatus 为 Failed 时节点侧上报的失败详情
+    ResizeStatus: Optional[str] = None  # 规格在线升配状态：空表示规格已在节点内生效；Pending 表示规格已写入但节点内尚未确认生效；Failed 表示节点内无法生效，原因见 ResizeFailReason、ResizeMessage
     SGID: Optional[str] = None  # 
     SGName: Optional[str] = None  # 安全组名称
     Status: Optional[str] = None  # 状态

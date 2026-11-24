@@ -23,7 +23,6 @@ class TenantTenantInfoRes:
     MemberStatus: Optional[str] = None  # 成员状态，主账号生命周期状态；AVAILABLE可用、FREEZE冻结、LOCKED锁定
     Name: Optional[str] = None  # 租户名称，组织显示名称，用于租户识别与展示
     Phone: Optional[str] = None  # 手机号，查询结果返回的主账号安全手机号，用于短信验证码及敏感操作二次验证展示
-    PrivateKey: Optional[str] = None  # API私钥，API调用请求签名RSA私钥，用于请求签名
     PublicKey: Optional[str] = None  # API公钥，API调用身份验证RSA公钥，用于签名验证
     Remark: Optional[str] = None  # 备注，说明或备注信息
     Status: Optional[str] = None  # 租户状态，租户生命周期状态；AVAILABLE可用、FREEZE冻结

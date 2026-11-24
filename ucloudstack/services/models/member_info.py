@@ -21,7 +21,6 @@ class MemberInfo:
     MemberName: Optional[str] = None  # 成员名称，账号展示名称用于管理界面显示
     OAuth2UniqueID: Optional[str] = None  # OAuth2唯一标识ID，用于绑定外部身份提供商的用户身份
     Phone: Optional[str] = None  # 手机号，用于安全通知或验证码接收
-    PrivateKey: Optional[str] = None  # API私钥，用于请求签名，需妥善保管
     Privileges: Optional[str] = None  # 权限级别，标识账号在租户内的管理范围，取值：MEMBER_PRIVILEGES_ADMIN（管理员）、MEMBER_PRIVILEGES_DEFAULT（普通成员）
     PublicKey: Optional[str] = None  # API公钥，用于请求签名校验与鉴权
     Status: Optional[str] = None  # 账号状态，标识账号当前可用性，取值：AVAILABLE（正常）、FREEZE（冻结）、LOCKED（锁定）
