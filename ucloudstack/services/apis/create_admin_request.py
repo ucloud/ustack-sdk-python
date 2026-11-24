@@ -16,7 +16,7 @@ class CreateAdminRequest:
 
     MemberName: str  # 成员名称，管理员展示名称用于管理界面显示，长度为1-30个字符，只能包含中英文、数字、点、下划线和中划线
 
-    Password: str  # 登录密码，用于管理员登录；若使用 X-Auth-Method: plain 则需 Base64 输入并在服务端转为 AES 加密；需满足 GlobalConfigKeyPasswordLength 与 GlobalConfigKeyPasswordComplexity 规则
+    Password: str  # 登录密码，用于管理员登录；明文传输（依赖 TLS）；若使用 X-Auth-Method: plain 则需 Base64 输入；需满足 GlobalConfigKeyPasswordLength 与 GlobalConfigKeyPasswordComplexity 规则
 
     Regions: List[str]  # 地域ID列表，当GrantLevel=Region时必填且至少一个，用于在创建管理员时原子完成地域授权
 

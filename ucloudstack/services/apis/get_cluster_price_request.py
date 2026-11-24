@@ -24,6 +24,8 @@ class GetClusterPriceRequest:
 
     CompanyID: Optional[int] = None  # 租户ID
 
+    ControlPlaneSpec: Optional[str] = None  # 控制面规格档位，可为 1x、2x、4x，缺省为 1x
+
     HighAvailability: Optional[str] = None  # 高可用
 
     Memory: Optional[int] = None  # 内存大小

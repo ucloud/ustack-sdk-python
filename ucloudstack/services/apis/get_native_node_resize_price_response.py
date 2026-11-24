@@ -5,10 +5,11 @@ from typing import Optional, List, Any, Dict
 
 
 @dataclass
-class DescribePMAURLResponse:
+class GetNativeNodeResizePriceResponse:
     """"""
     RetCode: int = 0
     Message: str = ""
     Action: str = ""
 
-    PMAURL: Optional[str] = None  # PMAURL，Web管理地址
+    OrderType: Optional[str] = None  # 订单类型
+    Price: Optional[float] = None  # 价格

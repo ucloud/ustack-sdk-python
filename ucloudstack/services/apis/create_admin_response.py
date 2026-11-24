@@ -12,3 +12,5 @@ class CreateAdminResponse:
     Action: str = ""
 
     MemberID: Optional[int] = None  # 成员ID，创建成功后返回的管理员账号标识
+    PrivateKey: Optional[str] = None  # API私钥，管理员私钥，仅在本次创建响应中返回一次，请立即妥善保存；后续查询接口不返回
+    PublicKey: Optional[str] = None  # API公钥，管理员公钥，仅在本次创建响应中返回

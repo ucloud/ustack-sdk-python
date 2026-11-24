@@ -12,7 +12,7 @@ class LoginByPasswordRequest:
 
     Email: str  # 账号邮箱，登录身份标识并用于查询账号权限，需符合邮箱格式
 
-    Password: str  # 登录密码，用于认证；若使用 X-Auth-Method: plain 则需 Base64 输入，服务端转为 AES 加密
+    Password: str  # 登录密码，用于认证；明文传输（依赖 TLS），口令不再做前端加密；若使用 X-Auth-Method: plain 则需 Base64 输入
 
     ClientID: Optional[str] = None  # OAuth2客户端ID，用于触发登录后的授权流程
 

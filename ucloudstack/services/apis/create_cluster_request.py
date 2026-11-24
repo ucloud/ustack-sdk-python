@@ -34,6 +34,8 @@ class CreateClusterRequest:
 
     CompanyID: Optional[int] = None  # 租户ID
 
+    ControlPlaneSpec: Optional[str] = None  # 控制面规格档位，可为 1x、2x、4x，缺省为 1x
+
     EIPID: Optional[str] = None  # APIServer EIPID
 
     HighAvailability: Optional[str] = None  # 高可用类型

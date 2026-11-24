@@ -14,7 +14,7 @@ class CreateSubMemberRequest:
 
     MemberName: str  # 成员名称，子账号展示名称用于管理界面显示
 
-    Password: str  # 登录密码，用于子账号登录；若使用 X-Auth-Method: plain 则需 Base64 输入并在服务端转为 AES 加密；需满足 GlobalConfigKeyPasswordLength 与 GlobalConfigKeyPasswordComplexity 规则
+    Password: str  # 登录密码，用于子账号登录；明文传输（依赖 TLS）；若使用 X-Auth-Method: plain 则需 Base64 输入；需满足 GlobalConfigKeyPasswordLength 与 GlobalConfigKeyPasswordComplexity 规则
 
     CompanyID: Optional[int] = None  # 租户ID，标识子账号归属的租户实体，通常由登录上下文确定
 
